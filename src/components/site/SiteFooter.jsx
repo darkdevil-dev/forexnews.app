@@ -41,6 +41,195 @@ const columns = [
 
 const currencies = ["USD", "EUR", "GBP", "JPY", "AUD", "CAD", "CHF", "NZD"];
 
+function DirectoryBadgesList({ hidden }) {
+  return (
+    <div
+      className="flex shrink-0 items-center gap-5 sm:gap-7 pr-5 sm:pr-7"
+      aria-hidden={hidden || undefined}
+    >
+      <a
+        href="https://twelve.tools"
+        target="_blank"
+        rel="dofollow noopener"
+        className="inline-block shrink-0 transition-transform duration-200 hover:scale-[1.03]"
+      >
+        <img
+          src="https://twelve.tools/badge0-white.svg"
+          alt="Featured on Twelve Tools"
+          width="200"
+          height="54"
+          className="h-[36px] sm:h-[40px] w-auto rounded-lg"
+        />
+      </a>
+      <a
+        href="https://dang.ai"
+        target="_blank"
+        rel="dofollow noopener"
+        className="inline-block shrink-0 transition-transform duration-200 hover:scale-[1.03]"
+      >
+        <img
+          src="https://assets.dang.ai/badges/dang-verified-dark.png"
+          alt="Verified on DANG!"
+          width="260"
+          height="94"
+          className="h-[36px] sm:h-[40px] w-auto rounded-lg"
+        />
+      </a>
+      <a
+        href="https://toolpilot.ai"
+        target="_blank"
+        rel="dofollow noopener"
+        className="inline-block shrink-0 transition-transform duration-200 hover:scale-[1.03]"
+      >
+        <img
+          src="https://www.toolpilot.ai/cdn/shop/files/f-b_690x151_crop_center.png"
+          alt="Featured on ToolPilot"
+          width="300"
+          height="66"
+          className="h-[36px] sm:h-[40px] w-auto rounded-lg border border-white/10"
+        />
+      </a>
+      <a
+        href="https://neeed.directory/products/forexnews-app?utm_source=forexnews-app"
+        target="_blank"
+        rel="noopener"
+        className="inline-block shrink-0 transition-transform duration-200 hover:scale-[1.03]"
+      >
+        <img
+          src="https://neeed.directory/badges/neeed-badge-light.svg"
+          alt="Featured on neeed.directory"
+          width="139"
+          height="44"
+          className="h-[36px] sm:h-[40px] w-auto rounded-lg"
+        />
+      </a>
+      <a
+        href="https://yo.directory"
+        target="_blank"
+        rel="dofollow noopener"
+        className="inline-block shrink-0 transition-transform duration-200 hover:scale-[1.03]"
+      >
+        <img
+          src="https://assets.yo.directory/badges/yo-directory-featured-dark.svg"
+          alt="Featured on Yo.directory"
+          width="260"
+          height="94"
+          className="h-[36px] sm:h-[40px] w-auto rounded-lg"
+        />
+      </a>
+      <a
+        href="https://startupfa.st"
+        target="_blank"
+        title="Powered by Startup Fast"
+        className="inline-block shrink-0 transition-transform duration-200 hover:scale-[1.03]"
+      >
+        <img
+          src="https://startupfa.st/images/badges/powered-by-light.svg"
+          alt="Powered by Startup Fast"
+          width="150"
+          height="44"
+          className="h-[36px] sm:h-[40px] w-auto rounded-lg"
+        />
+      </a>
+      <a
+        href="https://www.scrolllaunch.com/products/forexnews-app?ref=badge"
+        target="_blank"
+        rel="noopener"
+        className="inline-block shrink-0 transition-transform duration-200 hover:scale-[1.03]"
+      >
+        <img
+          src="https://www.scrolllaunch.com/api/badge/forexnews-app"
+          alt="Featured on ScrollLaunch"
+          width="220"
+          height="48"
+          className="h-[36px] sm:h-[40px] w-auto rounded-lg"
+        />
+      </a>
+      <a
+        href="https://auraplusplus.com/projects/forexnews-app"
+        target="_blank"
+        rel="noopener"
+        title="View ForexNews.app on Aura++"
+        className="inline-block shrink-0 transition-transform duration-200 hover:scale-[1.03]"
+      >
+        <img
+          src="https://auraplusplus.com/images/badges/featured-on-light.svg"
+          alt="Featured on Aura++"
+          width="265"
+          height="58"
+          className="h-[36px] sm:h-[40px] w-auto rounded-lg"
+        />
+      </a>
+      <a
+        href="https://startupfa.me/s/forex-news?utm_source=forexnews.app"
+        target="_blank"
+        rel="noopener"
+        className="inline-block shrink-0 transition-transform duration-200 hover:scale-[1.03]"
+      >
+        <img
+          src="https://startupfa.me/badge?t=classic&theme=default"
+          alt="ForexNews.app - Featured on Startup Fame"
+          width="171"
+          height="54"
+          className="h-[36px] sm:h-[40px] w-auto rounded-lg"
+        />
+      </a>
+      <a
+        href="https://indiehunt.io/project/forexnews-app"
+        target="_blank"
+        rel="noopener"
+        className="inline-block shrink-0 transition-transform duration-200 hover:scale-[1.03]"
+      >
+        <img
+          src="https://indiehunt.io/badges/indiehunt-badge-light.svg"
+          alt="Featured on IndieHunt"
+          width="150"
+          height="44"
+          className="h-[36px] sm:h-[40px] w-auto rounded-lg"
+        />
+      </a>
+      <a
+        href="https://submitaitools.org/forexnews-app/"
+        target="_blank"
+        rel="noopener"
+        className="inline-block shrink-0 transition-transform duration-200 hover:scale-[1.03]"
+      >
+        <img
+          src="https://submitaitools.org/static_submitaitools/images/submitaitools.png"
+          alt="forexnews.app"
+          width="200"
+          height="60"
+          className="h-[36px] sm:h-[40px] w-auto rounded-lg"
+        />
+      </a>
+      <div className="inline-flex shrink-0 flex-col items-center leading-none transition-transform duration-200 hover:scale-[1.03]">
+        <a
+          href="https://tools.launchllama.co?utm_source=badge&utm_medium=referral"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block"
+        >
+          <img
+            src="https://tools.launchllama.co/featured-badge.png?v=2"
+            alt="Launch Llama Tools"
+            width="200"
+            height="52"
+            className="h-[36px] sm:h-[40px] w-auto rounded-lg"
+          />
+        </a>
+        <a
+          href="https://mcpshelf.co/?utm_source=badge&utm_medium=referral"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-1 text-[8px] font-semibold tracking-wide text-white/40 hover:text-white transition-colors"
+        >
+          Launch your MCP
+        </a>
+      </div>
+    </div>
+  );
+}
+
 export function SiteFooter() {
   return (
     <footer className="border-t border-white/10 bg-ink text-white">
@@ -116,190 +305,18 @@ export function SiteFooter() {
           ))}
         </div>
 
-        {/* Featured on Directory Badges */}
-        <div className="border-b border-white/10 py-7">
+        {/* Featured on Directory Badges - Horizontal Auto Scrolling Single Row */}
+        <div className="border-b border-white/10 py-6">
           <p className="font-mono text-[10.5px] uppercase tracking-[0.2em] text-white/40 mb-3.5">
             Featured on
           </p>
-          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
-            <a
-              href="https://twelve.tools"
-              target="_blank"
-              rel="dofollow noopener"
-              className="inline-block transition-transform duration-200 hover:scale-[1.02]"
-            >
-              <img
-                src="https://twelve.tools/badge0-white.svg"
-                alt="Featured on Twelve Tools"
-                width="200"
-                height="54"
-                className="h-[40px] sm:h-[44px] w-auto rounded-lg"
-              />
-            </a>
-            <a
-              href="https://dang.ai"
-              target="_blank"
-              rel="dofollow noopener"
-              className="inline-block transition-transform duration-200 hover:scale-[1.02]"
-            >
-              <img
-                src="https://assets.dang.ai/badges/dang-verified-dark.png"
-                alt="Verified on DANG!"
-                width="260"
-                height="94"
-                className="h-[40px] sm:h-[44px] w-auto rounded-lg"
-              />
-            </a>
-            <a
-              href="https://toolpilot.ai"
-              target="_blank"
-              rel="dofollow noopener"
-              className="inline-block transition-transform duration-200 hover:scale-[1.02]"
-            >
-              <img
-                src="https://www.toolpilot.ai/cdn/shop/files/f-b_690x151_crop_center.png"
-                alt="Featured on ToolPilot"
-                width="300"
-                height="66"
-                className="h-[40px] sm:h-[44px] w-auto rounded-lg border border-white/10"
-              />
-            </a>
-            <a
-              href="https://neeed.directory/products/forexnews-app?utm_source=forexnews-app"
-              target="_blank"
-              rel="noopener"
-              className="inline-block transition-transform duration-200 hover:scale-[1.02]"
-            >
-              <img
-                src="https://neeed.directory/badges/neeed-badge-light.svg"
-                alt="Featured on neeed.directory"
-                width="139"
-                height="44"
-                className="h-[40px] sm:h-[44px] w-auto rounded-lg"
-              />
-            </a>
-            <a
-              href="https://yo.directory"
-              target="_blank"
-              rel="dofollow noopener"
-              className="inline-block transition-transform duration-200 hover:scale-[1.02]"
-            >
-              <img
-                src="https://assets.yo.directory/badges/yo-directory-featured-dark.svg"
-                alt="Featured on Yo.directory"
-                width="260"
-                height="94"
-                className="h-[40px] sm:h-[44px] w-auto rounded-lg"
-              />
-            </a>
-            <a
-              href="https://startupfa.st"
-              target="_blank"
-              title="Powered by Startup Fast"
-              className="inline-block transition-transform duration-200 hover:scale-[1.02]"
-            >
-              <img
-                src="https://startupfa.st/images/badges/powered-by-light.svg"
-                alt="Powered by Startup Fast"
-                width="150"
-                height="44"
-                className="h-[40px] sm:h-[44px] w-auto rounded-lg"
-              />
-            </a>
-            <a
-              href="https://www.scrolllaunch.com/products/forexnews-app?ref=badge"
-              target="_blank"
-              rel="noopener"
-              className="inline-block transition-transform duration-200 hover:scale-[1.02]"
-            >
-              <img
-                src="https://www.scrolllaunch.com/api/badge/forexnews-app"
-                alt="Featured on ScrollLaunch"
-                width="220"
-                height="48"
-                className="h-[40px] sm:h-[44px] w-auto rounded-lg"
-              />
-            </a>
-            <a
-              href="https://auraplusplus.com/projects/forexnews-app"
-              target="_blank"
-              rel="noopener"
-              title="View ForexNews.app on Aura++"
-              className="inline-block transition-transform duration-200 hover:scale-[1.02]"
-            >
-              <img
-                src="https://auraplusplus.com/images/badges/featured-on-light.svg"
-                alt="Featured on Aura++"
-                width="265"
-                height="58"
-                className="h-[40px] sm:h-[44px] w-auto rounded-lg"
-              />
-            </a>
-            <a
-              href="https://startupfa.me/s/forex-news?utm_source=forexnews.app"
-              target="_blank"
-              rel="noopener"
-              className="inline-block transition-transform duration-200 hover:scale-[1.02]"
-            >
-              <img
-                src="https://startupfa.me/badge?t=classic&theme=default"
-                alt="ForexNews.app - Featured on Startup Fame"
-                width="171"
-                height="54"
-                className="h-[40px] sm:h-[44px] w-auto rounded-lg"
-              />
-            </a>
-            <a
-              href="https://indiehunt.io/project/forexnews-app"
-              target="_blank"
-              rel="noopener"
-              className="inline-block transition-transform duration-200 hover:scale-[1.02]"
-            >
-              <img
-                src="https://indiehunt.io/badges/indiehunt-badge-light.svg"
-                alt="Featured on IndieHunt"
-                width="150"
-                height="44"
-                className="h-[40px] sm:h-[44px] w-auto rounded-lg"
-              />
-            </a>
-            <a
-              href="https://submitaitools.org/forexnews-app/"
-              target="_blank"
-              rel="noopener"
-              className="inline-block transition-transform duration-200 hover:scale-[1.02]"
-            >
-              <img
-                src="https://submitaitools.org/static_submitaitools/images/submitaitools.png"
-                alt="forexnews.app"
-                width="200"
-                height="60"
-                className="h-[40px] sm:h-[44px] w-auto rounded-lg"
-              />
-            </a>
-            <div className="inline-flex flex-col items-center leading-none transition-transform duration-200 hover:scale-[1.02]">
-              <a
-                href="https://tools.launchllama.co?utm_source=badge&utm_medium=referral"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
-              >
-                <img
-                  src="https://tools.launchllama.co/featured-badge.png?v=2"
-                  alt="Launch Llama Tools"
-                  width="200"
-                  height="52"
-                  className="h-[40px] sm:h-[44px] w-auto rounded-lg"
-                />
-              </a>
-              <a
-                href="https://mcpshelf.co/?utm_source=badge&utm_medium=referral"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-1 text-[8px] font-semibold tracking-wide text-white/40 hover:text-white transition-colors"
-              >
-                Launch your MCP
-              </a>
+          <div
+            className="marquee relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_4%,black_96%,transparent)]"
+            aria-label="Featured on directories carousel"
+          >
+            <div className="marquee-track flex w-max items-center py-1">
+              <DirectoryBadgesList />
+              <DirectoryBadgesList hidden />
             </div>
           </div>
         </div>
