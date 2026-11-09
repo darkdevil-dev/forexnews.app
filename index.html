@@ -46,23 +46,95 @@
     <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)" />
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
 
-    <!-- Structured Data (JSON-LD) for Search Engines -->
+    <!-- Structured Data (JSON-LD) for Search Engines & Google Sitelinks -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Forex News",
-      "applicationCategory": "FinanceApplication",
-      "operatingSystem": "Android",
-      "url": "https://forexnews.app/",
-      "image": "https://forexnews.app/og-image.png",
-      "description": "Global economic calendar, custom event alerts and 16 trading calculators for forex traders.",
-      "installUrl": "https://play.google.com/store/apps/details?id=com.forexnews.app",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://forexnews.app/#website",
+          "url": "https://forexnews.app/",
+          "name": "Forex News",
+          "description": "Live global economic calendar, real-time event alerts and 16 trading calculators for forex traders.",
+          "inLanguage": "en-US",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Forex News",
+            "url": "https://forexnews.app/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://forexnews.app/apple-touch-icon.png",
+              "width": 180,
+              "height": 180
+            }
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://forexnews.app/#app",
+          "name": "Forex News",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "Android",
+          "url": "https://forexnews.app/",
+          "image": "https://forexnews.app/og-image.png",
+          "description": "Global economic calendar, custom event alerts and 16 trading calculators for forex traders.",
+          "installUrl": "https://play.google.com/store/apps/details?id=com.forexnews.app",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        },
+        {
+          "@type": "ItemList",
+          "name": "Main Navigation",
+          "itemListElement": [
+            {
+              "@type": "SiteNavigationElement",
+              "position": 1,
+              "name": "Economic Calendar",
+              "description": "Live global economic calendar and releases",
+              "url": "https://forexnews.app/#features"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 2,
+              "name": "Event Alerts",
+              "description": "Custom alerts before major economic events",
+              "url": "https://forexnews.app/#alerts"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 3,
+              "name": "Trading Calculators",
+              "description": "16 essential trading calculators for forex",
+              "url": "https://forexnews.app/#calculators"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 4,
+              "name": "Privacy Policy",
+              "description": "Privacy policy for Forex News app and website",
+              "url": "https://forexnews.app/privacy"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 5,
+              "name": "Terms of Service",
+              "description": "Terms of service and software agreement",
+              "url": "https://forexnews.app/terms"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 6,
+              "name": "Risk Disclaimer",
+              "description": "Foreign exchange risk disclosure and warning",
+              "url": "https://forexnews.app/risk-disclaimer"
+            }
+          ]
+        }
+      ]
     }
     </script>
 
