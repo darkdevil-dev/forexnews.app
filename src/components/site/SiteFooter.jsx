@@ -116,6 +116,43 @@ export function SiteFooter() {
           ))}
         </div>
 
+        {/* Featured on Directory Badges */}
+        <div className="border-b border-white/10 py-7">
+          <p className="font-mono text-[10.5px] uppercase tracking-[0.2em] text-white/40 mb-3.5">
+            Featured on
+          </p>
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+            <a
+              href="https://twelve.tools"
+              target="_blank"
+              rel="dofollow noopener"
+              className="inline-block transition-transform duration-200 hover:scale-[1.02]"
+            >
+              <img
+                src="https://twelve.tools/badge0-white.svg"
+                alt="Featured on Twelve Tools"
+                width="200"
+                height="54"
+                className="h-[40px] sm:h-[44px] w-auto rounded-lg"
+              />
+            </a>
+            <a
+              href="https://dang.ai"
+              target="_blank"
+              rel="dofollow noopener"
+              className="inline-block transition-transform duration-200 hover:scale-[1.02]"
+            >
+              <img
+                src="https://assets.dang.ai/badges/dang-verified-dark.png"
+                alt="Verified on DANG!"
+                width="260"
+                height="94"
+                className="h-[40px] sm:h-[44px] w-auto rounded-lg"
+              />
+            </a>
+          </div>
+        </div>
+
         <div className="flex flex-col gap-5 pt-8 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-mono text-[10px] text-white/30">© 2026 Forex News · forexnews.app</p>
           <div className="flex items-center gap-1.5">

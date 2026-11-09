@@ -86,3 +86,4 @@ for (const page of pages) {
 }
 
 console.log("All static SEO pages generated successfully.");
+
