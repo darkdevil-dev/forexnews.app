@@ -207,14 +207,14 @@ export function SiteFooter() {
               />
             </a>
             <a
-              href="https://www.scrolllaunch.com/products/forexnews?ref=badge"
+              href="https://www.scrolllaunch.com/products/forexnews-app?ref=badge"
               target="_blank"
               rel="noopener"
               className="inline-block transition-transform duration-200 hover:scale-[1.02]"
             >
               <img
-                src="https://www.scrolllaunch.com/api/badge/forexnews"
-                alt="ForexNews.app - Featured on ScrollLaunch"
+                src="https://www.scrolllaunch.com/api/badge/forexnews-app"
+                alt="Featured on ScrollLaunch"
                 width="220"
                 height="48"
                 className="h-[40px] sm:h-[44px] w-auto rounded-lg"
@@ -260,6 +260,20 @@ export function SiteFooter() {
                 alt="Featured on IndieHunt"
                 width="150"
                 height="44"
+                className="h-[40px] sm:h-[44px] w-auto rounded-lg"
+              />
+            </a>
+            <a
+              href="https://submitaitools.org/forexnews-app/"
+              target="_blank"
+              rel="noopener"
+              className="inline-block transition-transform duration-200 hover:scale-[1.02]"
+            >
+              <img
+                src="https://submitaitools.org/static_submitaitools/images/submitaitools.png"
+                alt="forexnews.app"
+                width="200"
+                height="60"
                 className="h-[40px] sm:h-[44px] w-auto rounded-lg"
               />
             </a>
