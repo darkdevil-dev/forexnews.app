@@ -235,6 +235,34 @@ export function SiteFooter() {
                 className="h-[40px] sm:h-[44px] w-auto rounded-lg"
               />
             </a>
+            <a
+              href="https://startupfa.me/s/forex-news?utm_source=forexnews.app"
+              target="_blank"
+              rel="noopener"
+              className="inline-block transition-transform duration-200 hover:scale-[1.02]"
+            >
+              <img
+                src="https://startupfa.me/badge?t=classic&theme=default"
+                alt="ForexNews.app - Featured on Startup Fame"
+                width="171"
+                height="54"
+                className="h-[40px] sm:h-[44px] w-auto rounded-lg"
+              />
+            </a>
+            <a
+              href="https://indiehunt.io/project/forexnews-app"
+              target="_blank"
+              rel="noopener"
+              className="inline-block transition-transform duration-200 hover:scale-[1.02]"
+            >
+              <img
+                src="https://indiehunt.io/badges/indiehunt-badge-light.svg"
+                alt="Featured on IndieHunt"
+                width="150"
+                height="44"
+                className="h-[40px] sm:h-[44px] w-auto rounded-lg"
+              />
+            </a>
             <div className="inline-flex flex-col items-center leading-none transition-transform duration-200 hover:scale-[1.02]">
               <a
                 href="https://tools.launchllama.co?utm_source=badge&utm_medium=referral"
