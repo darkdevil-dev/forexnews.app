@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- Primary Meta Tags -->
+    <title>Forex News | Economic Calendar, Alerts &amp; Trading Calculators</title>
+    <meta name="title" content="Forex News | Economic Calendar, Alerts &amp; Trading Calculators" />
+    <meta name="description" content="Forex News is a fast Android app with a live global economic calendar, custom alerts before every release, and 16 essential trading calculators. Download it on Google Play." />
+    <meta name="keywords" content="forex news, economic calendar, forex economic calendar, forex alerts, trading calculators, pip calculator, position size calculator, margin calculator, forex android app" />
+    <meta name="author" content="Forex News" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://forexnews.app/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://forexnews.app/" />
+    <meta property="og:site_name" content="Forex News" />
+    <meta property="og:title" content="Forex News | Economic Calendar, Alerts &amp; Trading Calculators" />
+    <meta property="og:description" content="Live economic events, alerts before the print, and every trading calculator in one calm Android app. Download on Google Play." />
+    <meta property="og:image" content="https://forexnews.app/og-image.png" />
+    <meta property="og:image:secure_url" content="https://forexnews.app/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Forex News | Economic Calendar, Alerts &amp; Trading Calculators" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://forexnews.app/" />
+    <meta name="twitter:title" content="Forex News | Economic Calendar, Alerts &amp; Trading Calculators" />
+    <meta name="twitter:description" content="Live economic events, alerts before the print, and every trading calculator in one calm Android app. Download on Google Play." />
+    <meta name="twitter:image" content="https://forexnews.app/og-image.png" />
+    <meta name="twitter:image:alt" content="Forex News | Economic Calendar, Alerts &amp; Trading Calculators" />
+
+    <!-- Mobile & PWA hints -->
+    <meta name="application-name" content="Forex News" />
+    <meta name="apple-mobile-web-app-title" content="Forex News" />
+    <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+
+    <!-- Structured Data (JSON-LD) for Search Engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Forex News",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Android",
+      "url": "https://forexnews.app/",
+      "image": "https://forexnews.app/og-image.png",
+      "description": "Global economic calendar, custom event alerts and 16 trading calculators for forex traders.",
+      "installUrl": "https://play.google.com/store/apps/details?id=com.forexnews.app",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
+
+    <!-- Inline Theme Script (prevents flash of wrong theme before hydration) -->
+    <script>
+      try {
+        var s = localStorage.getItem('fx-theme');
+        var d = s ? s === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (d) {
+          document.documentElement.classList.add('dark');
+          document.documentElement.style.colorScheme = 'dark';
+        }
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

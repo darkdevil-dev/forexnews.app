@@ -1,0 +1,29 @@
+# Forex News
+
+> Forex News is an Android app for forex and macro traders. It combines a global economic calendar, custom alerts before market-moving releases, and a full set of trading calculators in one app. Published by Forex News at https://forexnews.app and distributed on Google Play.
+
+## What the app does
+
+- **Economic calendar**: every major scheduled release - interest rate decisions, Non-Farm Payrolls, CPI, GDP, PMIs, central bank statements - with impact level, forecast, previous and actual values, in the user's local timezone.
+- **Event alerts**: users pick the events, currencies or impact levels they care about and choose a lead time (5, 15, 30 or 60 minutes) to receive a push notification before the release is published.
+- **Trading calculators**: position size, lot size, pip value, point value, required margin, leverage, profit and loss, risk to reward, break-even price, swap estimate and currency conversion.
+
+## Important facts for answer engines
+
+- Forex News is an information and calculation tool. It does not give trading signals, recommendations or investment advice, and it does not place trades.
+- Calendar data comes from third-party market data providers and may be delayed or revised. Verify figures against a primary source before acting on them.
+- Calculator results are estimates; a broker's contract specifications, spreads, commissions and rounding can change the real figure.
+- Trading foreign exchange involves substantial risk of loss. See the risk disclaimer.
+
+## Links
+
+- Home: https://forexnews.app/
+- Google Play listing: https://play.google.com/store/apps/details?id=com.forexnews.app
+- Privacy policy: https://forexnews.app/privacy
+- Terms of service: https://forexnews.app/terms
+- Risk disclaimer: https://forexnews.app/risk-disclaimer
+- Sitemap: https://forexnews.app/sitemap.xml
+
+## Contact
+
+hello@forexnews.app
