@@ -164,6 +164,20 @@ export function SiteFooter() {
                 className="h-[40px] sm:h-[44px] w-auto rounded-lg border border-white/10"
               />
             </a>
+            <a
+              href="https://toolpilot.ai"
+              target="_blank"
+              rel="dofollow noopener"
+              className="inline-block transition-transform duration-200 hover:scale-[1.02]"
+            >
+              <img
+                src="https://www.toolpilot.ai/cdn/shop/files/f-b_690x151_crop_center.png"
+                alt="Featured on ToolPilot"
+                width="300"
+                height="66"
+                className="h-[40px] sm:h-[44px] w-auto rounded-lg border border-white/10"
+              />
+            </a>
           </div>
         </div>
 
