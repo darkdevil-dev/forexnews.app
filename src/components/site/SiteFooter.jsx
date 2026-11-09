@@ -220,6 +220,21 @@ export function SiteFooter() {
                 className="h-[40px] sm:h-[44px] w-auto rounded-lg"
               />
             </a>
+            <a
+              href="https://auraplusplus.com/projects/forexnews-app"
+              target="_blank"
+              rel="noopener"
+              title="View ForexNews.app on Aura++"
+              className="inline-block transition-transform duration-200 hover:scale-[1.02]"
+            >
+              <img
+                src="https://auraplusplus.com/images/badges/featured-on-light.svg"
+                alt="Featured on Aura++"
+                width="265"
+                height="58"
+                className="h-[40px] sm:h-[44px] w-auto rounded-lg"
+              />
+            </a>
             <div className="inline-flex flex-col items-center leading-none transition-transform duration-200 hover:scale-[1.02]">
               <a
                 href="https://tools.launchllama.co?utm_source=badge&utm_medium=referral"
