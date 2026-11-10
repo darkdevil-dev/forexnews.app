@@ -29,6 +29,16 @@ const pages = [
     title: "Risk Disclaimer",
     description: "Risk disclaimer: Forex News is an economic calendar and calculation tool, not financial advice.",
   },
+  {
+    path: "refund-policy",
+    title: "Refund Policy",
+    description: "Official Refund Policy for the Forex News Android app and forexnews.app website.",
+  },
+  {
+    path: "refund",
+    title: "Refund Policy",
+    description: "Official Refund Policy for the Forex News Android app and forexnews.app website.",
+  },
 ];
 
 for (const page of pages) {

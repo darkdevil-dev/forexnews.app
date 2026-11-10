@@ -26,6 +26,7 @@ const columns = [
     links: [
       { label: "Privacy Policy", to: "/privacy" },
       { label: "Terms of Service", to: "/terms" },
+      { label: "Refund Policy", to: "/refund-policy" },
       { label: "Risk Disclaimer", to: "/risk-disclaimer" },
     ],
   },
@@ -256,6 +257,20 @@ function DirectoryBadgesList({ hidden }) {
           alt="forexnews.app Domain Rating"
           width="360"
           height="80"
+          className="h-[36px] sm:h-[40px] w-auto rounded-lg"
+        />
+      </a>
+      <a
+        href="https://acidtools.com/ai/forexnews"
+        target="_blank"
+        rel="noopener"
+        className="inline-block shrink-0 transition-transform duration-200 hover:scale-[1.03]"
+      >
+        <img
+          src="https://acidtools.com/assets/images/badge.png"
+          alt="Acid Tools"
+          height="54"
+          loading="lazy"
           className="h-[36px] sm:h-[40px] w-auto rounded-lg"
         />
       </a>

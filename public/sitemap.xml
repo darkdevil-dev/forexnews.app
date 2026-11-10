@@ -20,7 +20,13 @@
   </url>
   <url>
     <loc>https://forexnews.app/risk-disclaimer</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://forexnews.app/refund-policy</loc>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

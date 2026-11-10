@@ -38,7 +38,16 @@ const sections = [
     ],
   },
   {
-    h: "7. Third-party services and stores",
+    h: "7. Subscriptions, Billing & Refund Policy",
+    p: [
+      "Certain features, premium tools, or ad-free experiences may require a paid subscription or in-app purchase managed through Google Play Store billing.",
+      "All purchases and subscription payments are strictly final and non-refundable once provisioned. We do not provide refunds or credits for partial subscription periods, unused features, change of mind, trading losses, or forgotten auto-renewals.",
+      "The sole exception: If your payment is successfully debited but due to a verified technical failure the subscription fails to activate or become accessible on your account, and cannot be resolved, you may request a refund within 7 calendar days with valid proof of purchase (GPA Order ID). Please review our dedicated Refund Policy (/refund-policy) for complete details.",
+      "Subscriptions auto-renew automatically unless cancelled at least 24 hours prior to the renewal date via your Google Play account settings. Uninstalling the application does not cancel an active subscription.",
+    ],
+  },
+  {
+    h: "8. Third-party services and stores",
     p: [
       "The app is distributed through Google Play, and its use is also subject to Google's terms. Market data and notification delivery depend on third-party providers whose availability we do not control.",
     ],
