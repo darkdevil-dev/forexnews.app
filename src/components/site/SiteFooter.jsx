@@ -245,6 +245,20 @@ function DirectoryBadgesList({ hidden }) {
           className="h-[36px] sm:h-[40px] w-auto rounded-lg"
         />
       </a>
+      <a
+        href="https://domainrank.app"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block shrink-0 transition-transform duration-200 hover:scale-[1.03]"
+      >
+        <img
+          src="https://domainrank.app/api/badge/forexnews.app?style=normal&theme=dark"
+          alt="forexnews.app Domain Rating"
+          width="360"
+          height="80"
+          className="h-[36px] sm:h-[40px] w-auto rounded-lg"
+        />
+      </a>
       <div className="inline-flex shrink-0 flex-col items-center leading-none transition-transform duration-200 hover:scale-[1.03]">
         <a
           href="https://tools.launchllama.co?utm_source=badge&utm_medium=referral"
