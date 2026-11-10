@@ -1,15 +1,15 @@
-import { Calculator, ShieldCheck, TrendingUp } from "lucide-react";
+import { Calculator, ShieldCheck, Landmark } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const cards = [
   { label: "High impact", value: "6 events", note: "Scheduled today", dot: "bg-rose-500" },
   { label: "Market sessions", value: "2 active", note: "Asian · Tokyo", dot: "bg-emerald-500" },
   {
-    label: "Daily bias",
-    value: "USD bullish",
-    note: "Score +0.9",
-    icon: TrendingUp,
-    tone: "bg-emerald-500/10 text-emerald-500",
+    label: "Central bank rates",
+    value: "Fed · ECB · BOE",
+    note: "Live policy rate decisions",
+    icon: Landmark,
+    tone: "bg-amber-500/10 text-amber-500",
   },
   { label: "Market sentiment", value: "NZD/USD", note: "59% long", bar: 59 },
   {

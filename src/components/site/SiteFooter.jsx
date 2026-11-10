@@ -202,6 +202,34 @@ function DirectoryBadgesList({ hidden }) {
           className="h-[36px] sm:h-[40px] w-auto rounded-lg"
         />
       </a>
+      <a
+        href="https://dofollow.tools"
+        target="_blank"
+        rel="dofollow noopener"
+        className="inline-block shrink-0 transition-transform duration-200 hover:scale-[1.03]"
+      >
+        <img
+          src="https://dofollow.tools/badge/badge_dark.svg"
+          alt="Featured on Dofollow.Tools"
+          width="153"
+          height="44"
+          className="h-[36px] sm:h-[40px] w-auto rounded-lg"
+        />
+      </a>
+      <a
+        href="https://deeplaunch.io"
+        target="_blank"
+        rel="dofollow noopener"
+        className="inline-block shrink-0 transition-transform duration-200 hover:scale-[1.03]"
+      >
+        <img
+          src="https://deeplaunch.io/badge/badge_dark.svg"
+          alt="Featured on DeepLaunch.io"
+          width="153"
+          height="44"
+          className="h-[36px] sm:h-[40px] w-auto rounded-lg"
+        />
+      </a>
       <div className="inline-flex shrink-0 flex-col items-center leading-none transition-transform duration-200 hover:scale-[1.03]">
         <a
           href="https://tools.launchllama.co?utm_source=badge&utm_medium=referral"
