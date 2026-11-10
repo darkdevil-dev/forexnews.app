@@ -304,6 +304,36 @@ function DirectoryBadgesList({ hidden }) {
           className="h-[36px] sm:h-[40px] w-auto rounded-lg"
         />
       </a>
+      <a
+        href="https://ufind.best/products/forexnewsapp"
+        target="_blank"
+        rel="noopener"
+        className="inline-block shrink-0 transition-transform duration-200 hover:scale-[1.03]"
+      >
+        <img
+          src="https://ufind.best/badges/ufind-best-badge-light.svg"
+          alt="Featured on ufind.best"
+          width="150"
+          height="44"
+          loading="lazy"
+          className="h-[36px] sm:h-[40px] w-auto rounded-lg"
+        />
+      </a>
+      <a
+        href="https://launchit.fast"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block shrink-0 transition-transform duration-200 hover:scale-[1.03]"
+      >
+        <img
+          src="https://launchit.fast/img/launching.svg"
+          alt="Launching soon on LaunchIt"
+          width="200"
+          height="54"
+          loading="lazy"
+          className="h-[36px] sm:h-[40px] w-auto rounded-lg"
+        />
+      </a>
       <div className="inline-flex shrink-0 flex-col items-center leading-none transition-transform duration-200 hover:scale-[1.03]">
         <a
           href="https://tools.launchllama.co?utm_source=badge&utm_medium=referral"
