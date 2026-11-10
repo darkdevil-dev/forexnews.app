@@ -274,6 +274,36 @@ function DirectoryBadgesList({ hidden }) {
           className="h-[36px] sm:h-[40px] w-auto rounded-lg"
         />
       </a>
+      <a
+        href="https://www.betterlaunch.co/product/forexnews"
+        target="_blank"
+        rel="noopener"
+        className="inline-block shrink-0 transition-transform duration-200 hover:scale-[1.03]"
+      >
+        <img
+          src="https://www.betterlaunch.co/badge-find-dark.svg"
+          alt="Better Launch"
+          width="200"
+          height="56"
+          loading="lazy"
+          className="h-[36px] sm:h-[40px] w-auto rounded-lg"
+        />
+      </a>
+      <a
+        href="https://newtool.site/item/forexnewsapp?utm_source=forexnews.app"
+        target="_blank"
+        rel="noopener"
+        className="inline-block shrink-0 transition-transform duration-200 hover:scale-[1.03]"
+      >
+        <img
+          src="https://newtool.site/badges/newtool-light.svg"
+          alt="Featured on NewTool.site"
+          width="180"
+          height="54"
+          loading="lazy"
+          className="h-[36px] sm:h-[40px] w-auto rounded-lg"
+        />
+      </a>
       <div className="inline-flex shrink-0 flex-col items-center leading-none transition-transform duration-200 hover:scale-[1.03]">
         <a
           href="https://tools.launchllama.co?utm_source=badge&utm_medium=referral"
