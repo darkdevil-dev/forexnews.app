@@ -1,4 +1,4 @@
-# TEST_READY — ForexNews Blog Expansion & 2027 SEO Dominance Test Suite
+# TEST_READY: ForexNews Blog Expansion & 2027 SEO Dominance Test Suite
 
 ## Overview
 The automated end-to-end verification suite has been designed, implemented, and verified in `tests/verify_blog_audit.py`.

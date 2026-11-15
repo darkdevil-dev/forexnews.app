@@ -208,9 +208,9 @@ for (const page of standardPages) {
 // 2. Generate Blog Index Page (/blog)
 {
   const blogUrl = "https://forexnews.app/blog";
-  const blogTitle = "Forex Trading Guides & Calendar Research | Forex News";
+  const blogTitle = "Forex Trading Blog: Economic Calendar Alerts | Forex News";
   const blogDesc =
-    "Deep guides on trading macroeconomic news releases, position sizing mathematics, and currency indicator analysis. Built by Forex News.";
+    "Forex News trading blog: In-depth guides on economic calendar alerts, position sizing calculators, and high-impact macro event trading strategies.";
 
   let html = applyCommonMeta(template, blogTitle, blogDesc, blogUrl);
 
@@ -271,9 +271,9 @@ for (const page of standardPages) {
         </nav>
       </header>
       <main style="max-width:860px;margin:0 auto;padding:48px 20px;">
-        <h1 style="font-size:36px;font-weight:800;color:#ffffff;letter-spacing:-0.03em;">Forex Trading Guides &amp; Macroeconomic Research</h1>
-        <p style="font-size:16px;color:#a1a1aa;line-height:1.6;margin:16px 0 16px;">Evidence-based guides on trading central bank announcements, high-impact economic news, and mathematical risk management.</p>
-        <p style="font-size:14px;color:#a1a1aa;line-height:1.6;margin-bottom:36px;">Our quantitative research team analyzes global macroeconomic releases, interest rate differentials across major central banks, and position sizing mathematics to help currency traders avoid slippage, manage portfolio drawdown, and trade with structured discipline.</p>
+        <h1 style="font-size:36px;font-weight:800;color:#ffffff;letter-spacing:-0.03em;">Forex Trading Blog: Economic News &amp; Calendar Analysis</h1>
+        <p style="font-size:16px;color:#a1a1aa;line-height:1.6;margin:16px 0 16px;">Master macroeconomic event trading, real-time economic calendar alerts, risk management mathematics, and currency indicator strategies with free expert guides from Forex News.</p>
+        <p style="font-size:14px;color:#a1a1aa;line-height:1.6;margin-bottom:36px;">Our team analyzes global macroeconomic releases, interest rate differentials across major central banks, and position sizing mathematics to help currency traders avoid slippage, manage portfolio drawdown, and trade with structured discipline.</p>
         ${blogArticlesHtml}
       </main>
     </div>

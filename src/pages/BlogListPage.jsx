@@ -11,9 +11,9 @@ export function BlogListPage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   usePageMeta({
-    title: "Forex Trading Guides & Calendar Research | Forex News",
+    title: "Forex Trading Blog: Economic Calendar Alerts | Forex News",
     description:
-      "Deep guides on trading macroeconomic news releases, position sizing mathematics, and currency indicator analysis. Built by Forex News.",
+      "Forex News trading blog: In-depth guides on economic calendar alerts, position sizing calculators, and high-impact macro event trading strategies.",
     canonicalPath: "/blog",
   });
 
@@ -53,14 +53,14 @@ export function BlogListPage() {
         <div className="max-w-2xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-signal/20 bg-signal/10 px-3 py-1 text-[11px] font-semibold text-signal">
             <BookOpen className="h-3.5 w-3.5" />
-            <span>Research & Strategic Guides</span>
+            <span>Forex Trading & Strategy Blog</span>
           </div>
           <h1 className="mt-4 text-[clamp(2rem,4.5vw,3rem)] font-extrabold leading-[1.08] tracking-[-0.04em] text-foreground">
-            Macroeconomic Strategy & Quantitative Risk Guides.
+            Forex Trading Blog: Economic News, Market Analysis & Trading Guides
           </h1>
           <p className="mt-4 text-[15px] leading-relaxed text-muted-foreground">
-            Evidence-based frameworks for trading central bank announcements, high-impact economic
-            indicators, and mathematical position sizing.
+            Master macroeconomic event trading, real-time economic calendar alerts, risk management
+            mathematics, and currency indicator strategies with free expert guides from Forex News.
           </p>
         </div>
 

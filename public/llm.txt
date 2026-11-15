@@ -7,7 +7,7 @@ Forex News (https://forexnews.app/) is an Android application engineered for cur
 ## Core Pages
 
 - [Forex News Home](https://forexnews.app/): Main application overview, features, calendar demo, calculators, and Google Play download.
-- [Research & Guides Hub](https://forexnews.app/blog): Quantitative analysis, news trading strategies, and risk management documentation.
+- [Forex Trading Blog](https://forexnews.app/blog): Economic news analysis, calendar trading strategies, and risk management guides.
 
 ## Research & Strategy Guides
 

@@ -7,6 +7,7 @@ import { AlertsSection } from "@/components/site/AlertsSection";
 import { TrustSection } from "@/components/site/TrustSection";
 import { FeatureGrid } from "@/components/site/FeatureGrid";
 import { ToolsSection } from "@/components/site/ToolsSection";
+import { BlogSection } from "@/components/site/BlogSection";
 import { FaqSection } from "@/components/site/FaqSection";
 import { FinalCta } from "@/components/site/FinalCta";
 import { SiteFooter } from "@/components/site/SiteFooter";
@@ -32,6 +33,7 @@ export function HomePage() {
         <TrustSection />
         <FeatureGrid />
         <ToolsSection />
+        <BlogSection />
         <FaqSection />
         <FinalCta />
       </main>
