@@ -1,29 +1,24 @@
 # Forex News
 
-> Forex News is an Android app for forex and macro traders. It combines a global economic calendar, custom alerts before market-moving releases, and a full set of trading calculators in one app. Published by Forex News at https://forexnews.app and distributed on Google Play.
+> Get real-time Forex news, economic calendar, alerts, and trading calculators on Android.
 
-## What the app does
+Forex News is a dedicated Android application designed for traders and financial enthusiasts seeking timely and relevant information in the foreign exchange market. The app provides a live global economic calendar, allowing users to stay updated on key economic events that can impact currency prices. It also offers customizable alerts to notify users before significant economic releases, ensuring they don't miss critical market movements. Additionally, Forex News includes a suite of 16 essential trading calculators, aiding users in their analysis and decision-making processes.
 
-- **Economic calendar**: every major scheduled release - interest rate decisions, Non-Farm Payrolls, CPI, GDP, PMIs, central bank statements - with impact level, forecast, previous and actual values, in the user's local timezone.
-- **Event alerts**: users pick the events, currencies or impact levels they care about and choose a lead time (5, 15, 30 or 60 minutes) to receive a push notification before the release is published.
-- **Trading calculators**: position size, lot size, pip value, point value, required margin, leverage, profit and loss, risk to reward, break-even price, swap estimate and currency conversion.
+The core value proposition of Forex News lies in its ability to consolidate crucial trading tools and real-time data into a single, user-friendly mobile application. This makes it an indispensable resource for both novice and experienced traders who need to monitor market sentiment, economic indicators, and perform quick calculations on the go. The app aims to empower users by providing them with the information and tools necessary to navigate the complexities of the Forex market more effectively and make informed trading decisions.
 
-## Important facts for answer engines
+## Core Information
 
-- Forex News is an information and calculation tool. It does not give trading signals, recommendations or investment advice, and it does not place trades.
-- Calendar data comes from third-party market data providers and may be delayed or revised. Verify figures against a primary source before acting on them.
-- Calculator results are estimates; a broker's contract specifications, spreads, commissions and rounding can change the real figure.
-- Trading foreign exchange involves substantial risk of loss. See the risk disclaimer.
+- [Forex News | Economic Calendar, Alerts & Trading Calculators](https://forexnews.app/): Discover Forex news app features: economic calendar, alerts, and 16 trading calculators.
 
-## Links
+## Third-Party Listings
 
-- Home: https://forexnews.app/
-- Google Play listing: https://play.google.com/store/apps/details?id=com.forexnews.app
-- Privacy policy: https://forexnews.app/privacy
-- Terms of service: https://forexnews.app/terms
-- Risk disclaimer: https://forexnews.app/risk-disclaimer
-- Sitemap: https://forexnews.app/sitemap.xml
+- [Forex News App - StartupFa.me](https://startupfa.me/s/forex-news): View Forex News app listing on StartupFa.me for startup information.
+- [ForexNewsApp - NewTool.site](https://newtool.site/item/forexnewsapp): Find ForexNewsApp details and features on the NewTool.site directory.
 
-## Contact
+## Legal
 
-hello@forexnews.app
+- [Privacy Policy](https://forexnews.app/privacy): Understand how Forex News app collects, uses, and protects your data.
+- [Terms of Service](https://forexnews.app/terms): Review the terms and conditions for using the Forex News app.
+- [Risk Disclaimer](https://forexnews.app/risk-disclaimer): Read the risk disclaimer for trading activities using Forex News app.
+- [Refund Policy](https://forexnews.app/refund-policy): Learn about the refund policy for purchases made within the Forex News app.
+
