@@ -414,6 +414,51 @@ function DirectoryBadgesList({ hidden }) {
           className="h-[36px] sm:h-[40px] w-auto rounded-lg"
         />
       </a>
+      <a
+        href="https://saasgrow.app?ref=forexnews.app"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block shrink-0 transition-transform duration-200 hover:scale-[1.03]"
+      >
+        <img
+          src="https://saasgrow.app/api/badge?type=featured&style=light"
+          alt="ForexNews.app on SaaSGrow"
+          width="240"
+          height="54"
+          loading="lazy"
+          className="h-[36px] sm:h-[40px] w-auto rounded-lg"
+        />
+      </a>
+      <a
+        href="https://fazier.com/launches/forexnews.app"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block shrink-0 transition-transform duration-200 hover:scale-[1.03]"
+      >
+        <img
+          src="https://fazier.com/api/v1//public/badges/launch_badges.svg?badge_type=launched&theme=light"
+          alt="Fazier badge"
+          width="120"
+          height="40"
+          loading="lazy"
+          className="h-[36px] sm:h-[40px] w-auto rounded-lg"
+        />
+      </a>
+      <a
+        href="https://verifieddr.com/website/forexnews-app"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block shrink-0 transition-transform duration-200 hover:scale-[1.03]"
+      >
+        <img
+          src="https://verifieddr.com/badge/forexnews-app.svg?metric=truedr"
+          alt="Verified DR - Verified Domain Rating for forexnews.app"
+          width="220"
+          height="68"
+          loading="lazy"
+          className="h-[36px] sm:h-[40px] w-auto rounded-lg"
+        />
+      </a>
       <div className="inline-flex shrink-0 flex-col items-center leading-none transition-transform duration-200 hover:scale-[1.03]">
         <a
           href="https://tools.launchllama.co?utm_source=badge&utm_medium=referral"

@@ -73,7 +73,11 @@ function formatInline(text) {
   // Markdown links: [anchor](url)
   res = res.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" style="color:#f59e0b;text-decoration:underline;">$1</a>');
   // Bold: **text**
-  res = res.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  res = res.replace(/\*\*([^*]+?)\*\*/g, '<strong style="color:#ffffff;font-weight:700;">$1</strong>');
+  // Italic: *text*
+  res = res.replace(/(?<!\*)\*([^*]+?)\*(?!\*)/g, '<em>$1</em>');
+  // Code: `text`
+  res = res.replace(/`([^`]+?)`/g, '<code style="background:rgba(255,255,255,0.08);padding:2px 6px;border-radius:4px;font-family:monospace;font-size:13px;color:#f59e0b;">$1</code>');
   return res;
 }
 
@@ -83,6 +87,16 @@ function renderSectionBlocks(content) {
     .map((block) => {
       const trimmed = block.trim();
       if (!trimmed) return "";
+
+      // Subheadings
+      if (trimmed.startsWith("### ")) {
+        const title = trimmed.replace(/^###\s+/, "");
+        return `<h3 style="font-size:19px;font-weight:700;color:#ffffff;margin:28px 0 12px;">${formatInline(title)}</h3>`;
+      }
+      if (trimmed.startsWith("#### ")) {
+        const title = trimmed.replace(/^####\s+/, "");
+        return `<h4 style="font-size:16px;font-weight:700;color:#ffffff;margin:20px 0 8px;">${formatInline(title)}</h4>`;
+      }
 
       // Table parsing
       if (trimmed.startsWith("|")) {
@@ -129,21 +143,30 @@ function renderSectionBlocks(content) {
         }
       }
 
-      // List parsing
-      if (trimmed.startsWith("- ") || trimmed.startsWith("1. ")) {
-        const items = trimmed
-          .split("\n")
-          .map((i) => i.trim())
-          .filter((i) => i.length > 0);
-        const isOrdered = trimmed.startsWith("1. ");
-        const tag = isOrdered ? "ol" : "ul";
+      // Numbered List
+      if (/^\d+\.\s+/.test(trimmed)) {
+        const items = trimmed.split("\n").map((i) => i.trim()).filter(Boolean);
         const listItems = items
           .map((item) => {
-            const clean = item.replace(/^[-*]|\d+\.\s*/, "").trim();
-            return `<li style="margin-bottom:8px;line-height:1.6;">${formatInline(clean)}</li>`;
+            const match = item.match(/^(\d+)\.\s+(.*)$/s);
+            const num = match ? match[1] : "";
+            const text = match ? match[2] : item;
+            return `<li style="margin-bottom:10px;line-height:1.65;"><strong style="color:#f59e0b;">${num}.</strong> ${formatInline(text)}</li>`;
           })
           .join("");
-        return `<${tag} style="padding-left:24px;margin:16px 0;color:#d4d4d8;">${listItems}</${tag}>`;
+        return `<ol style="padding-left:20px;margin:16px 0;color:#d4d4d8;list-style:none;">${listItems}</ol>`;
+      }
+
+      // Bullet List
+      if (/^[-*]\s+/.test(trimmed)) {
+        const items = trimmed.split("\n").map((i) => i.trim()).filter(Boolean);
+        const listItems = items
+          .map((item) => {
+            const clean = item.replace(/^[-*]\s+/, "").trim();
+            return `<li style="margin-bottom:8px;line-height:1.65;">${formatInline(clean)}</li>`;
+          })
+          .join("");
+        return `<ul style="padding-left:24px;margin:16px 0;color:#d4d4d8;">${listItems}</ul>`;
       }
 
       // Standard paragraph
@@ -415,6 +438,16 @@ for (const post of BLOG_POSTS) {
 
           ${sectionsHtml}
           ${faqsHtml}
+
+          <section style="margin-top:40px;border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;display:flex;gap:16px;align-items:center;">
+            <div style="width:48px;height:48px;border-radius:50%;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.3);color:#f59e0b;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;">FN</div>
+            <div>
+              <div style="font-size:11px;font-family:monospace;text-transform:uppercase;color:#f59e0b;font-weight:700;letter-spacing:0.05em;">Published by</div>
+              <h3 style="font-size:16px;font-weight:700;color:#ffffff;margin:2px 0;">${post.author.name}</h3>
+              <p style="font-size:12px;color:#f59e0b;margin:0 0 4px;font-weight:600;">${post.author.role}</p>
+              <p style="font-size:13px;color:#a1a1aa;margin:0;line-height:1.5;">${post.author.credentials}</p>
+            </div>
+          </section>
         </article>
       </main>
     </div>

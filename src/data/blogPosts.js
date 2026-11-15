@@ -15,9 +15,9 @@ export const BLOG_POSTS = [
     "publishDate": "2026-11-15",
     "modifiedDate": "2026-11-15",
     "author": {
-      "name": "Forex News Research Team",
-      "role": "Quantitative Systems & Latency Engineers",
-      "credentials": "Lead software and network engineers specializing in high-frequency financial feeds and mobile push notification infrastructure."
+      "name": "Forex News Team",
+      "role": "Forex News App",
+      "credentials": "Forex News is an Android app providing real-time macroeconomic calendar events, customizable push alerts, and 16 essential trading calculators for disciplined currency traders."
     },
     "keywords": [
       "best forex news app android 2027",
@@ -39,7 +39,7 @@ export const BLOG_POSTS = [
       {
         "id": "the-evolution-of-news-trading-2027",
         "heading": "The Evolution of Economic News Trading in 2027",
-        "content": "The global foreign exchange market transacts over $7.5 trillion each day, with liquidity distributed across primary electronic communication networks (ECNs) such as EBS, Currenex, and Euronext FX. Entering 2027, the speed of macroeconomic repricing has accelerated dramatically. Where retail traders a decade ago could afford to watch economic calendar web pages refresh and manually enter trades several seconds after a release, modern high-frequency trading (HFT) firms and algorithmic market makers consume raw statistical data direct from source feeds within 50 to 150 microseconds.\n\nWhen government agencies such as the US Bureau of Labor Statistics (BLS) or central banks like the Federal Reserve, European Central Bank (ECB), and Bank of Japan (BoJ) release high-impact data, liquidity providers instantly recalibrate their risk profiles. Order books thin out, bid-ask spreads widen by 400% to 1,500%, and directional momentum candles can travel 30 to 60 pips within the first two seconds of a release.\n\nFor currency traders operating on mobile devices, this structural transformation creates a critical technical challenge. A trader who receives an economic notification 5 to 10 seconds late is not merely slightly delayed; they are entering a market that has already completed its primary liquidity discovery phase. Entering at that point means absorbing peak spread widening and extreme slippage. In 2027, your choice of mobile economic calendar application is no longer a matter of aesthetic preference. It is a fundamental operational component of your risk management infrastructure.\n\nTo determine which mobile applications provide real utility for disciplined currency traders, our quantitative research team conducted an exhaustive empirical benchmark of six leading platforms: [Forex News on Google Play](https://play.google.com/store/apps/details?id=com.forexnews.app), Forex Factory, Myfxbook, Investing.com, DailyFX, and FXStreet. We analyzed push notification latency across 120 high-impact economic releases, measured memory and battery footprints, evaluated visual clutter and ad fatigue, and tested the mathematical capabilities of each application."
+        "content": "The global foreign exchange market transacts over $7.5 trillion each day, with liquidity distributed across primary electronic communication networks (ECNs) such as EBS, Currenex, and Euronext FX. Entering 2027, the speed of macroeconomic repricing has accelerated dramatically. Where retail traders a decade ago could afford to watch economic calendar web pages refresh and manually enter trades several seconds after a release, modern high-frequency trading (HFT) firms and algorithmic market makers consume raw statistical data direct from source feeds within 50 to 150 microseconds.\n\nWhen government agencies such as the US Bureau of Labor Statistics (BLS) or central banks like the Federal Reserve, European Central Bank (ECB), and Bank of Japan (BoJ) release high-impact data, liquidity providers instantly recalibrate their risk profiles. Order books thin out, bid-ask spreads widen by 400% to 1,500%, and directional momentum candles can travel 30 to 60 pips within the first two seconds of a release.\n\nFor currency traders operating on mobile devices, this structural transformation creates a critical technical challenge. A trader who receives an economic notification 5 to 10 seconds late is not merely slightly delayed; they are entering a market that has already completed its primary liquidity discovery phase. Entering at that point means absorbing peak spread widening and extreme slippage. In 2027, your choice of mobile economic calendar application is no longer a matter of aesthetic preference. It is a fundamental operational component of your risk management infrastructure.\n\nTo determine which mobile applications provide real utility for disciplined currency traders, our team conducted an exhaustive empirical benchmark of six leading platforms: [Forex News on Google Play](https://play.google.com/store/apps/details?id=com.forexnews.app), Forex Factory, Myfxbook, Investing.com, DailyFX, and FXStreet. We analyzed push notification latency across 120 high-impact economic releases, measured memory and battery footprints, evaluated visual clutter and ad fatigue, and tested the mathematical capabilities of each application."
       },
       {
         "id": "empirical-latency-benchmarks",
@@ -107,9 +107,9 @@ export const BLOG_POSTS = [
     "publishDate": "2026-11-15",
     "modifiedDate": "2026-11-15",
     "author": {
-      "name": "Forex News Research Team",
-      "role": "Quantitative Systems & Macro Analysts",
-      "credentials": "Senior market data engineers and former interbank FX quantitative researchers analyzing macroeconomic calendar infrastructure."
+      "name": "Forex News Team",
+      "role": "Forex News App",
+      "credentials": "Forex News is an Android app providing real-time macroeconomic calendar events, customizable push alerts, and 16 essential trading calculators for disciplined currency traders."
     },
     "keywords": [
       "forex factory vs forex news",
@@ -193,9 +193,9 @@ export const BLOG_POSTS = [
     "publishDate": "2026-11-15",
     "modifiedDate": "2026-11-15",
     "author": {
-      "name": "Forex News Research Team",
-      "role": "Mobile Performance & Software Auditors",
-      "credentials": "Former Android system performance engineers and mobile application security specialists auditing mobile financial software."
+      "name": "Forex News Team",
+      "role": "Forex News App",
+      "credentials": "Forex News is an Android app providing real-time macroeconomic calendar events, customizable push alerts, and 16 essential trading calculators for disciplined currency traders."
     },
     "keywords": [
       "investing com app review 2027",
@@ -279,9 +279,9 @@ export const BLOG_POSTS = [
     "publishDate": "2026-11-15",
     "modifiedDate": "2026-11-15",
     "author": {
-      "name": "Forex News Research Team",
-      "role": "Macro Strategists & Quantitative Analysts",
-      "credentials": "Former institutional fixed income and foreign exchange desk strategists specializing in central bank communications and calendar trading."
+      "name": "Forex News Team",
+      "role": "Forex News App",
+      "credentials": "Forex News is an Android app providing real-time macroeconomic calendar events, customizable push alerts, and 16 essential trading calculators for disciplined currency traders."
     },
     "keywords": [
       "how to trade forex news 2027",
@@ -365,9 +365,9 @@ export const BLOG_POSTS = [
     "publishDate": "2026-11-15",
     "modifiedDate": "2026-11-15",
     "author": {
-      "name": "Forex News Research Team",
-      "role": "Quantitative Risk & Mathematical Analysts",
-      "credentials": "Financial mathematicians and quantitative risk modelers specializing in portfolio capital preservation and margin risk systems."
+      "name": "Forex News Team",
+      "role": "Forex News App",
+      "credentials": "Forex News is an Android app providing real-time macroeconomic calendar events, customizable push alerts, and 16 essential trading calculators for disciplined currency traders."
     },
     "keywords": [
       "forex position size calculator 2027",
@@ -452,9 +452,9 @@ export const BLOG_POSTS = [
     "publishDate": "2026-11-15",
     "modifiedDate": "2026-11-15",
     "author": {
-      "name": "Forex News Research Team",
-      "role": "Global Macro & Currency Analysts",
-      "credentials": "Macroeconomic researchers and institutional currency analysts specializing in G10 central bank policy, sovereign debt spreads, and trade balance flows."
+      "name": "Forex News Team",
+      "role": "Forex News App",
+      "credentials": "Forex News is an Android app providing real-time macroeconomic calendar events, customizable push alerts, and 16 essential trading calculators for disciplined currency traders."
     },
     "keywords": [
       "major forex currency pairs 2027",

@@ -21,46 +21,65 @@ import { PLAY_STORE_URL } from "@/lib/site";
 
 function renderFormattedText(text) {
   if (!text) return null;
-  // Match either **bold** or [text](url)
-  const regex = /(\*\*.*?\*\*|\[.*?\]\(.*?\))/g;
-  const parts = text.split(regex);
-  return parts.map((part, index) => {
-    if (part.startsWith("**") && part.endsWith("**")) {
-      return (
-        <strong key={index} className="font-semibold text-foreground">
-          {part.slice(2, -2)}
-        </strong>
-      );
+
+  // Tokenize regex for [label](url), **bold**, *italic*, and `code`
+  const regex = /(\[([^\]]+)\]\(([^)]+)\)|\*\*([^*]+?)\*\*|\*([^*]+?)\*|`([^`]+?)`)/g;
+  const parts = [];
+  let lastIndex = 0;
+  let match;
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
     }
-    const linkMatch = part.match(/^\[(.*?)\]\((.*?)\)$/);
-    if (linkMatch) {
-      const [, label, href] = linkMatch;
+
+    if (match[2] && match[3]) {
+      const label = match[2];
+      const href = match[3];
       const isInternal = href.startsWith("/") || href.startsWith("#");
-      if (isInternal) {
-        return (
-          <a
-            key={index}
-            href={href}
-            className="text-signal hover:underline font-medium"
-          >
-            {label}
-          </a>
-        );
-      }
-      return (
+      parts.push(
         <a
-          key={index}
+          key={`link-${match.index}`}
           href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-signal hover:underline font-medium"
+          {...(!isInternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+          className="font-medium text-signal underline decoration-signal/30 underline-offset-2 transition-colors hover:decoration-signal"
         >
           {label}
         </a>
       );
+    } else if (match[4]) {
+      parts.push(
+        <strong key={`bold-${match.index}`} className="font-bold text-foreground">
+          {match[4]}
+        </strong>
+      );
+    } else if (match[5]) {
+      parts.push(
+        <em key={`italic-${match.index}`} className="italic text-foreground/90">
+          {match[5]}
+        </em>
+      );
+    } else if (match[6]) {
+      parts.push(
+        <code
+          key={`code-${match.index}`}
+          className="rounded bg-muted px-1.5 py-0.5 font-mono text-[12.5px] text-signal"
+        >
+          {match[6]}
+        </code>
+      );
+    } else {
+      parts.push(match[0]);
     }
-    return part;
-  });
+
+    lastIndex = match.index + match[0].length;
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+
+  return parts;
 }
 
 export function BlogPostPage() {
@@ -256,13 +275,13 @@ export function BlogPostPage() {
             </h2>
           </div>
           <p className="mt-3 text-[14.5px] leading-relaxed text-foreground font-medium">
-            {post.summaryCapsule}
+            {renderFormattedText(post.summaryCapsule)}
           </p>
           <ul className="mt-4 space-y-2.5 text-[13.5px] text-foreground/90">
             {post.takeaways.map((takeaway, idx) => (
               <li key={idx} className="flex items-start gap-2.5">
                 <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-signal" />
-                <span>{takeaway}</span>
+                <span className="flex-1">{renderFormattedText(takeaway)}</span>
               </li>
             ))}
           </ul>
@@ -317,6 +336,28 @@ export function BlogPostPage() {
                   const trimmed = para.trim();
                   if (!trimmed) return null;
 
+                  // Render subheadings
+                  if (trimmed.startsWith("### ")) {
+                    return (
+                      <h3
+                        key={pIdx}
+                        className="mt-8 mb-3 text-[19px] sm:text-[20px] font-bold text-foreground"
+                      >
+                        {renderFormattedText(trimmed.replace(/^###\s+/, ""))}
+                      </h3>
+                    );
+                  }
+                  if (trimmed.startsWith("#### ")) {
+                    return (
+                      <h4
+                        key={pIdx}
+                        className="mt-6 mb-2 text-[16px] sm:text-[17px] font-semibold text-foreground"
+                      >
+                        {renderFormattedText(trimmed.replace(/^####\s+/, ""))}
+                      </h4>
+                    );
+                  }
+
                   // Render markdown table
                   if (trimmed.startsWith("|")) {
                     const rows = trimmed
@@ -364,15 +405,39 @@ export function BlogPostPage() {
                     );
                   }
 
-                  // Render lists
-                  if (trimmed.startsWith("- ") || trimmed.startsWith("1. ")) {
+                  // Render numbered list
+                  if (/^\d+\.\s+/.test(trimmed)) {
                     const items = trimmed.split("\n").filter((i) => i.trim().length > 0);
                     return (
-                      <ul key={pIdx} className="my-4 space-y-2 pl-2">
+                      <ol key={pIdx} className="my-4 space-y-2.5 pl-1">
+                        {items.map((item, iIdx) => {
+                          const match = item.match(/^(\d+)\.\s+(.*)$/s);
+                          const num = match ? match[1] : iIdx + 1;
+                          const itemText = match ? match[2] : item;
+                          return (
+                            <li key={iIdx} className="flex items-start gap-3 text-[14.5px] leading-relaxed">
+                              <span className="mt-0.5 inline-grid h-5 w-5 shrink-0 place-items-center rounded bg-signal/15 font-mono text-[11px] font-bold text-signal">
+                                {num}
+                              </span>
+                              <div className="flex-1">{renderFormattedText(itemText)}</div>
+                            </li>
+                          );
+                        })}
+                      </ol>
+                    );
+                  }
+
+                  // Render bullet list
+                  if (/^[-*]\s+/.test(trimmed)) {
+                    const items = trimmed.split("\n").filter((i) => i.trim().length > 0);
+                    return (
+                      <ul key={pIdx} className="my-4 space-y-2.5 pl-2">
                         {items.map((item, iIdx) => (
-                          <li key={iIdx} className="flex items-start gap-2 text-[14.5px]">
+                          <li key={iIdx} className="flex items-start gap-2.5 text-[14.5px] leading-relaxed">
                             <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-signal" />
-                            <span>{renderFormattedText(item.replace(/^[-*]|\d+\.\s*/, ""))}</span>
+                            <div className="flex-1">
+                              {renderFormattedText(item.replace(/^[-*]\s+/, ""))}
+                            </div>
                           </li>
                         ))}
                       </ul>
@@ -380,7 +445,7 @@ export function BlogPostPage() {
                   }
 
                   return (
-                    <p key={pIdx} className="mb-4">
+                    <p key={pIdx} className="mb-4 leading-relaxed">
                       {renderFormattedText(trimmed)}
                     </p>
                   );
