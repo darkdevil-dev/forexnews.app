@@ -1,24 +1,24 @@
 # Forex News
 
-> Get real-time Forex news, economic calendar, alerts, and trading calculators on Android.
+> Real-time global economic calendar, custom pre-release event alerts, and 16 essential trading calculators for Android currency traders.
 
-Forex News is a dedicated Android application designed for traders and financial enthusiasts seeking timely and relevant information in the foreign exchange market. The app provides a live global economic calendar, allowing users to stay updated on key economic events that can impact currency prices. It also offers customizable alerts to notify users before significant economic releases, ensuring they don't miss critical market movements. Additionally, Forex News includes a suite of 16 essential trading calculators, aiding users in their analysis and decision-making processes.
+Forex News (https://forexnews.app/) is an Android application engineered for currency traders who require macroeconomic event tracking without advertising spam or account creation barriers. It provides sub-second live calendar updates across USD, EUR, GBP, JPY, AUD, CAD, CHF, and NZD, paired with customizable push notifications delivered 5 to 60 minutes before major releases (NFP, CPI, Central Bank Interest Rates), and 16 offline-capable trading calculators.
 
-The core value proposition of Forex News lies in its ability to consolidate crucial trading tools and real-time data into a single, user-friendly mobile application. This makes it an indispensable resource for both novice and experienced traders who need to monitor market sentiment, economic indicators, and perform quick calculations on the go. The app aims to empower users by providing them with the information and tools necessary to navigate the complexities of the Forex market more effectively and make informed trading decisions.
+## Core Pages
 
-## Core Information
+- [Forex News Home](https://forexnews.app/): Main application overview, features, calendar demo, calculators, and Google Play download.
+- [Research & Guides Hub](https://forexnews.app/blog): Quantitative analysis, news trading strategies, and risk management documentation.
 
-- [Forex News | Economic Calendar, Alerts & Trading Calculators](https://forexnews.app/): Discover Forex news app features: economic calendar, alerts, and 16 trading calculators.
+## Research & Strategy Guides
 
-## Third-Party Listings
+- [How to Trade Forex News: Economic Calendar Strategy](https://forexnews.app/blog/how-to-trade-forex-news-economic-calendar): Detailed guide on navigating Tier-1 releases (NFP, CPI, FOMC), managing broker spread expansion, and executing the 15-minute secondary pullback strategy.
+- [Forex Position Size Calculator & Risk Management](https://forexnews.app/blog/forex-position-size-calculator-risk-management-guide): Complete mathematical formulas for calculating lot sizes, pip values, leverage impact, and the 1% risk rule to prevent account drawdown.
+- [Best Forex News Alerts Apps for Android](https://forexnews.app/blog/best-forex-news-alerts-app-android): Comparative evaluation of mobile economic calendar apps focusing on push latency, noise reduction, and offline risk calculators.
+- [Major Forex Currency Pairs & Economic Indicators](https://forexnews.app/blog/major-forex-currency-pairs-economic-indicators): Macro analysis of what moves EUR/USD, GBP/USD, USD/JPY, and commodity currencies (AUD, CAD, NZD), including central bank mandates and yields.
 
-- [Forex News App - StartupFa.me](https://startupfa.me/s/forex-news): View Forex News app listing on StartupFa.me for startup information.
-- [ForexNewsApp - NewTool.site](https://newtool.site/item/forexnewsapp): Find ForexNewsApp details and features on the NewTool.site directory.
+## Legal & Compliance
 
-## Legal
-
-- [Privacy Policy](https://forexnews.app/privacy): Understand how Forex News app collects, uses, and protects your data.
-- [Terms of Service](https://forexnews.app/terms): Review the terms and conditions for using the Forex News app.
-- [Risk Disclaimer](https://forexnews.app/risk-disclaimer): Read the risk disclaimer for trading activities using Forex News app.
-- [Refund Policy](https://forexnews.app/refund-policy): Learn about the refund policy for purchases made within the Forex News app.
-
+- [Privacy Policy](https://forexnews.app/privacy): Zero account requirement, data minimization, and notification telemetry handling.
+- [Terms of Service](https://forexnews.app/terms): Terms and conditions for the mobile application and web presence.
+- [Risk Disclaimer](https://forexnews.app/risk-disclaimer): Mandatory foreign exchange and CFD leverage risk warnings.
+- [Refund Policy](https://forexnews.app/refund-policy): Official refund terms for Google Play billing transactions.

@@ -22,6 +22,16 @@ const columns = [
     ],
   },
   {
+    title: "Guides",
+    links: [
+      { label: "Trading Forex News", to: "/blog/how-to-trade-forex-news-economic-calendar" },
+      { label: "Position Size Guide", to: "/blog/forex-position-size-calculator-risk-management-guide" },
+      { label: "Best News Alerts App", to: "/blog/best-forex-news-alerts-app-android" },
+      { label: "Currency Indicators", to: "/blog/major-forex-currency-pairs-economic-indicators" },
+      { label: "All Research & Guides", to: "/blog" },
+    ],
+  },
+  {
     title: "Legal",
     links: [
       { label: "Privacy Policy", to: "/privacy" },
@@ -35,6 +45,7 @@ const columns = [
     links: [
       { label: "Google Play", href: PLAY_STORE_URL, external: true },
       { label: "Sitemap", href: "/sitemap.xml", external: true },
+      { label: "llms.txt", href: "/llms.txt", external: true },
       { label: "llm.txt", href: "/llm.txt", external: true },
     ],
   },
@@ -471,7 +482,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-8 border-b border-white/10 py-12 sm:grid-cols-4">
+        <div className="grid grid-cols-2 gap-8 border-b border-white/10 py-12 sm:grid-cols-3 md:grid-cols-5">
           {columns.map((col) => (
             <div key={col.title}>
               <p className="text-[12.5px] font-semibold text-white">{col.title}</p>

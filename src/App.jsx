@@ -1,6 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import { Analytics } from "@vercel/analytics/react";
 import { HomePage } from "./pages/HomePage.jsx";
+import { BlogListPage } from "./pages/BlogListPage.jsx";
+import { BlogPostPage } from "./pages/BlogPostPage.jsx";
 import { PrivacyPage } from "./pages/PrivacyPage.jsx";
 import { TermsPage } from "./pages/TermsPage.jsx";
 import { RiskPage } from "./pages/RiskPage.jsx";
@@ -12,6 +14,8 @@ export default function App() {
     <>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/blog" element={<BlogListPage />} />
+        <Route path="/blog/:slug" element={<BlogPostPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/terms" element={<TermsPage />} />
         <Route path="/risk-disclaimer" element={<RiskPage />} />

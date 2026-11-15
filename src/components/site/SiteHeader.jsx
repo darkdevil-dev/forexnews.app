@@ -1,13 +1,15 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { DownloadButton } from "@/components/site/DownloadButton";
 import { ThemeToggle } from "@/components/site/ThemeToggle";
 
 const links = [
-  { label: "What's inside", href: "#features" },
-  { label: "Alerts", href: "#alerts" },
-  { label: "Calculators", href: "#calculators" },
-  { label: "Questions", href: "#faq" },
+  { label: "What's inside", href: "/#features" },
+  { label: "Alerts", href: "/#alerts" },
+  { label: "Calculators", href: "/#calculators" },
+  { label: "Blog", href: "/blog" },
+  { label: "Questions", href: "/#faq" },
 ];
 
 export function SiteHeader() {
@@ -16,12 +18,12 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-5">
-        <a href="#top" className="flex shrink-0 items-center">
+        <Link to="/" className="flex shrink-0 items-center">
           <span className="text-[19px] sm:text-[20px] font-extrabold tracking-[-0.03em]">
             <span className="text-signal">F</span>
             <span className="text-foreground">orex News</span>
           </span>
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
           {links.map((l) => (
