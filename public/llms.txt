@@ -1,6 +1,6 @@
 # Forex News
 
-> Real-time global economic calendar, custom pre-release event alerts, and 16 essential trading calculators for Android currency traders.
+> Real-time global economic calendar, custom pre-release event alerts, and 16 essential trading calculators for Android currency traders in 2027.
 
 Forex News (https://forexnews.app/) is an Android application engineered for currency traders who require macroeconomic event tracking without advertising spam or account creation barriers. It provides sub-second live calendar updates across USD, EUR, GBP, JPY, AUD, CAD, CHF, and NZD, paired with customizable push notifications delivered 5 to 60 minutes before major releases (NFP, CPI, Central Bank Interest Rates), and 16 offline-capable trading calculators.
 
@@ -11,10 +11,12 @@ Forex News (https://forexnews.app/) is an Android application engineered for cur
 
 ## Research & Strategy Guides
 
+- [Best Forex Calendar & News Alert Apps for Android in 2027](https://forexnews.app/blog/best-forex-news-alerts-app-android): Empirical benchmark evaluating push notification latency, RAM consumption, and ad clutter across Forex News, Forex Factory, Myfxbook, Investing.com, DailyFX, and FXStreet.
+- [Forex Factory vs Forex News App: 2027 Calendar Comparison](https://forexnews.app/blog/forex-factory-vs-forex-news-app-comparison-2027): Technical comparison between classic desktop web browsing and modern native Android economic calendar push daemons with integrated risk calculation.
+- [Investing.com vs Myfxbook vs Forex News: 2027 Speed Audit](https://forexnews.app/blog/investing-com-myfxbook-vs-forex-news-app-2027): Software teardown exposing how third-party ad networks, video interstitials, and memory bloat impair execution speed during high-impact news releases.
 - [How to Trade Forex News: Economic Calendar Strategy](https://forexnews.app/blog/how-to-trade-forex-news-economic-calendar): Detailed guide on navigating Tier-1 releases (NFP, CPI, FOMC), managing broker spread expansion, and executing the 15-minute secondary pullback strategy.
 - [Forex Position Size Calculator & Risk Management](https://forexnews.app/blog/forex-position-size-calculator-risk-management-guide): Complete mathematical formulas for calculating lot sizes, pip values, leverage impact, and the 1% risk rule to prevent account drawdown.
-- [Best Forex News Alerts Apps for Android](https://forexnews.app/blog/best-forex-news-alerts-app-android): Comparative evaluation of mobile economic calendar apps focusing on push latency, noise reduction, and offline risk calculators.
-- [Major Forex Currency Pairs & Economic Indicators](https://forexnews.app/blog/major-forex-currency-pairs-economic-indicators): Macro analysis of what moves EUR/USD, GBP/USD, USD/JPY, and commodity currencies (AUD, CAD, NZD), including central bank mandates and yields.
+- [Major Forex Currency Pairs & Economic Indicators](https://forexnews.app/blog/major-forex-currency-pairs-economic-indicators): Macro analysis of what moves EUR/USD, GBP/USD, USD/JPY, and commodity currencies (AUD, CAD, NZD), including central bank mandates and sovereign bond yield spreads.
 
 ## Legal & Compliance
 

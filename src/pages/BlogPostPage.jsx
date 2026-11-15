@@ -19,24 +19,66 @@ import { DownloadButton } from "@/components/site/DownloadButton";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { PLAY_STORE_URL } from "@/lib/site";
 
+function renderFormattedText(text) {
+  if (!text) return null;
+  // Match either **bold** or [text](url)
+  const regex = /(\*\*.*?\*\*|\[.*?\]\(.*?\))/g;
+  const parts = text.split(regex);
+  return parts.map((part, index) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return (
+        <strong key={index} className="font-semibold text-foreground">
+          {part.slice(2, -2)}
+        </strong>
+      );
+    }
+    const linkMatch = part.match(/^\[(.*?)\]\((.*?)\)$/);
+    if (linkMatch) {
+      const [, label, href] = linkMatch;
+      const isInternal = href.startsWith("/") || href.startsWith("#");
+      if (isInternal) {
+        return (
+          <a
+            key={index}
+            href={href}
+            className="text-signal hover:underline font-medium"
+          >
+            {label}
+          </a>
+        );
+      }
+      return (
+        <a
+          key={index}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-signal hover:underline font-medium"
+        >
+          {label}
+        </a>
+      );
+    }
+    return part;
+  });
+}
+
 export function BlogPostPage() {
   const { slug } = useParams();
   const [copied, setCopied] = useState(false);
 
   const post = BLOG_POSTS.find((p) => p.slug === slug);
 
-  if (!post) {
-    return <Navigate to="/blog" replace />;
-  }
-
   usePageMeta({
-    title: `${post.seoTitle || post.title} | Forex News`,
-    description: post.description,
-    canonicalPath: `/blog/${post.slug}`,
+    title: post ? `${post.seoTitle || post.title} | Forex News` : "Blog | Forex News",
+    description: post ? post.description : "Forex News blog articles and trading guides.",
+    canonicalPath: post ? `/blog/${post.slug}` : "/blog",
   });
 
   // Inject Article and Breadcrumbs JSON-LD schema dynamically
   useEffect(() => {
+    if (!post) return;
+
     const articleSchema = {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
@@ -115,7 +157,11 @@ export function BlogPostPage() {
     }
   };
 
-  const relatedPosts = BLOG_POSTS.filter((p) => p.slug !== post.slug).slice(0, 2);
+  const relatedPosts = post ? BLOG_POSTS.filter((p) => p.slug !== post.slug).slice(0, 2) : [];
+
+  if (!post) {
+    return <Navigate to="/blog" replace />;
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -297,7 +343,7 @@ export function BlogPostPage() {
                             <tr>
                               {headerRow.map((h, hIdx) => (
                                 <th key={hIdx} className="px-4 py-3">
-                                  {h.replace(/\*\*/g, "")}
+                                  {renderFormattedText(h)}
                                 </th>
                               ))}
                             </tr>
@@ -307,7 +353,7 @@ export function BlogPostPage() {
                               <tr key={rIdx} className="hover:bg-muted/30">
                                 {bRow.map((cell, cIdx) => (
                                   <td key={cIdx} className="px-4 py-3 font-mono text-[12px]">
-                                    {cell.replace(/\*\*/g, "")}
+                                    {renderFormattedText(cell)}
                                   </td>
                                 ))}
                               </tr>
@@ -326,7 +372,7 @@ export function BlogPostPage() {
                         {items.map((item, iIdx) => (
                           <li key={iIdx} className="flex items-start gap-2 text-[14.5px]">
                             <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-signal" />
-                            <span>{item.replace(/^[-*]|\d+\.\s*/, "").replace(/\*\*(.*?)\*\*/g, "$1")}</span>
+                            <span>{renderFormattedText(item.replace(/^[-*]|\d+\.\s*/, ""))}</span>
                           </li>
                         ))}
                       </ul>
@@ -335,7 +381,7 @@ export function BlogPostPage() {
 
                   return (
                     <p key={pIdx} className="mb-4">
-                      {trimmed}
+                      {renderFormattedText(trimmed)}
                     </p>
                   );
                 })}
@@ -372,7 +418,7 @@ export function BlogPostPage() {
                   <div key={fIdx} className="rounded-xl border border-border bg-card p-5">
                     <h3 className="text-[15px] font-bold text-foreground">{faq.question}</h3>
                     <p className="mt-2 text-[13.5px] leading-relaxed text-muted-foreground">
-                      {faq.answer}
+                      {renderFormattedText(faq.answer)}
                     </p>
                   </div>
                 ))}
@@ -439,3 +485,4 @@ export function BlogPostPage() {
     </div>
   );
 }
+

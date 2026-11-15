@@ -18,32 +18,33 @@ const template = fs.readFileSync(templatePath, "utf-8");
 const standardPages = [
   {
     path: "privacy",
-    title: "Privacy Policy",
+    title: "Privacy Policy & Data Protection",
     description: "How Forex News handles data: privacy practices for the Forex News Android app and website.",
   },
   {
     path: "terms",
-    title: "Terms of Service",
+    title: "Terms of Service & User Agreement",
     description: "Terms of Service for the Forex News Android app and forexnews.app website.",
   },
   {
     path: "risk-disclaimer",
-    title: "Risk Disclaimer",
+    title: "Financial Risk & Trading Disclaimer",
     description: "Risk disclaimer: Forex News is an economic calendar and calculation tool, not financial advice.",
   },
   {
     path: "refund-policy",
-    title: "Refund Policy",
+    title: "Refund Policy & Billing Guarantee",
     description: "Official Refund Policy for the Forex News Android app and forexnews.app website.",
   },
   {
     path: "refund",
-    title: "Refund Policy",
+    title: "Refund Policy & Billing Guarantee",
     description: "Official Refund Policy for the Forex News Android app and forexnews.app website.",
   },
 ];
 
-function applyCommonMeta(html, title, description, url) {
+function applyCommonMeta(html, title, description, url, options = {}) {
+  const { ogType = "website", keywords = null } = options;
   let res = html;
   res = res.replace(/<title>.*?<\/title>/i, `<title>${title}</title>`);
   res = res.replace(/<meta name="title" content=".*?" \/>/i, `<meta name="title" content="${title}" />`);
@@ -52,9 +53,104 @@ function applyCommonMeta(html, title, description, url) {
   res = res.replace(/<meta property="og:title" content=".*?" \/>/i, `<meta property="og:title" content="${title}" />`);
   res = res.replace(/<meta property="og:description" content=".*?" \/>/i, `<meta property="og:description" content="${description}" />`);
   res = res.replace(/<meta property="og:url" content=".*?" \/>/i, `<meta property="og:url" content="${url}" />`);
+  res = res.replace(/<meta property="og:type" content=".*?" \/>/i, `<meta property="og:type" content="${ogType}" />`);
   res = res.replace(/<meta name="twitter:title" content=".*?" \/>/i, `<meta name="twitter:title" content="${title}" />`);
   res = res.replace(/<meta name="twitter:description" content=".*?" \/>/i, `<meta name="twitter:description" content="${description}" />`);
+  res = res.replace(/<meta name="twitter:url" content=".*?" \/>/i, `<meta name="twitter:url" content="${url}" />`);
+  if (keywords) {
+    if (res.includes('<meta name="keywords"')) {
+      res = res.replace(/<meta name="keywords" content=".*?" \/>/i, `<meta name="keywords" content="${keywords}" />`);
+    } else {
+      res = res.replace("</head>", `  <meta name="keywords" content="${keywords}" />\n</head>`);
+    }
+  }
   return res;
+}
+
+function formatInline(text) {
+  if (!text) return "";
+  let res = text;
+  // Markdown links: [anchor](url)
+  res = res.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" style="color:#f59e0b;text-decoration:underline;">$1</a>');
+  // Bold: **text**
+  res = res.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  return res;
+}
+
+function renderSectionBlocks(content) {
+  const blocks = content.split("\n\n");
+  return blocks
+    .map((block) => {
+      const trimmed = block.trim();
+      if (!trimmed) return "";
+
+      // Table parsing
+      if (trimmed.startsWith("|")) {
+        const rows = trimmed
+          .split("\n")
+          .map((r) => r.trim())
+          .filter((r) => r.length > 0);
+        if (rows.length >= 2) {
+          const headerCells = rows[0]
+            .split("|")
+            .map((c) => c.trim())
+            .filter((c) => c.length > 0);
+          const bodyRows = rows
+            .slice(2)
+            .map((r) =>
+              r
+                .split("|")
+                .map((c) => c.trim())
+                .filter((c) => c.length > 0)
+            );
+
+          const thead = `<thead style="border-bottom:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.04);"><tr style="border-bottom:1px solid rgba(255,255,255,0.1);">${headerCells
+            .map(
+              (h) =>
+                `<th style="padding:10px 14px;font-weight:700;color:#ffffff;text-align:left;">${formatInline(h)}</th>`
+            )
+            .join("")}</tr></thead>`;
+
+          const tbody = `<tbody>${bodyRows
+            .map(
+              (row) =>
+                `<tr style="border-bottom:1px solid rgba(255,255,255,0.06);">${row
+                  .map(
+                    (cell) =>
+                      `<td style="padding:10px 14px;color:#d4d4d8;font-family:monospace;font-size:13px;">${formatInline(
+                        cell
+                      )}</td>`
+                  )
+                  .join("")}</tr>`
+            )
+            .join("")}</tbody>`;
+
+          return `<div style="overflow-x:auto;margin:20px 0;border:1px solid rgba(255,255,255,0.1);border-radius:8px;"><table style="width:100%;border-collapse:collapse;text-align:left;font-size:14px;">${thead}${tbody}</table></div>`;
+        }
+      }
+
+      // List parsing
+      if (trimmed.startsWith("- ") || trimmed.startsWith("1. ")) {
+        const items = trimmed
+          .split("\n")
+          .map((i) => i.trim())
+          .filter((i) => i.length > 0);
+        const isOrdered = trimmed.startsWith("1. ");
+        const tag = isOrdered ? "ol" : "ul";
+        const listItems = items
+          .map((item) => {
+            const clean = item.replace(/^[-*]|\d+\.\s*/, "").trim();
+            return `<li style="margin-bottom:8px;line-height:1.6;">${formatInline(clean)}</li>`;
+          })
+          .join("");
+        return `<${tag} style="padding-left:24px;margin:16px 0;color:#d4d4d8;">${listItems}</${tag}>`;
+      }
+
+      // Standard paragraph
+      return `<p style="margin-bottom:14px;line-height:1.7;">${formatInline(trimmed)}</p>`;
+    })
+    .filter(Boolean)
+    .join("");
 }
 
 // 1. Generate Standard Pages
@@ -172,9 +268,15 @@ for (const page of standardPages) {
 for (const post of BLOG_POSTS) {
   const postUrl = `https://forexnews.app/blog/${post.slug}`;
   const baseTitle = post.seoTitle || post.title;
-  const fullTitle = baseTitle.length > 46 ? baseTitle : `${baseTitle} | Forex News`;
+  let fullTitle = baseTitle;
+  if (baseTitle.length + 13 <= 60 && !baseTitle.includes("Forex News")) {
+    fullTitle = `${baseTitle} | Forex News`;
+  }
 
-  let html = applyCommonMeta(template, fullTitle, post.description, postUrl);
+  let html = applyCommonMeta(template, fullTitle, post.description, postUrl, {
+    ogType: "article",
+    keywords: post.keywords ? post.keywords.join(", ") : null,
+  });
 
   const articleSchema = JSON.stringify(
     {
@@ -187,6 +289,9 @@ for (const post of BLOG_POSTS) {
       dateModified: post.modifiedDate || post.publishDate,
       mainEntityOfPage: postUrl,
       image: "https://forexnews.app/og-image.png",
+      inLanguage: "en-US",
+      wordCount: post.wordCount,
+      articleSection: post.category,
       author: {
         "@type": "Organization",
         name: post.author.name,
@@ -221,7 +326,31 @@ for (const post of BLOG_POSTS) {
     2
   );
 
-  const schemas = `\n    <script type="application/ld+json">\n    ${articleSchema}\n    </script>\n    <script type="application/ld+json">\n    ${breadcrumbJson}\n    </script>\n  </head>`;
+  const faqSchema =
+    post.faqs && post.faqs.length > 0
+      ? JSON.stringify(
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: post.faqs.map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: f.answer,
+              },
+            })),
+          },
+          null,
+          2
+        )
+      : null;
+
+  let schemas = `\n    <script type="application/ld+json">\n    ${articleSchema}\n    </script>\n    <script type="application/ld+json">\n    ${breadcrumbJson}\n    </script>`;
+  if (faqSchema) {
+    schemas += `\n    <script type="application/ld+json">\n    ${faqSchema}\n    </script>`;
+  }
+  schemas += `\n  </head>`;
   html = html.replace("</head>", schemas);
 
   // Pre-rendered semantic HTML for article
@@ -231,10 +360,7 @@ for (const post of BLOG_POSTS) {
         <section id="${s.id}" style="margin-top:36px;">
           <h2 style="font-size:22px;font-weight:700;color:#ffffff;border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:8px;">${s.heading}</h2>
           <div style="font-size:15px;color:#d4d4d8;line-height:1.7;margin-top:14px;">
-            ${s.content
-              .split("\n\n")
-              .map((p) => `<p style="margin-bottom:14px;">${p.trim().replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")}</p>`)
-              .join("")}
+            ${renderSectionBlocks(s.content)}
           </div>
         </section>
       `
@@ -250,7 +376,7 @@ for (const post of BLOG_POSTS) {
             (f) => `
           <div style="margin-top:18px;padding:16px;background:rgba(255,255,255,0.03);border-radius:10px;">
             <h3 style="font-size:16px;font-weight:700;color:#ffffff;">${f.question}</h3>
-            <p style="font-size:14px;color:#a1a1aa;margin-top:6px;line-height:1.6;">${f.answer}</p>
+            <p style="font-size:14px;color:#a1a1aa;margin-top:6px;line-height:1.6;">${formatInline(f.answer)}</p>
           </div>
         `
           )
@@ -281,9 +407,9 @@ for (const post of BLOG_POSTS) {
           
           <div style="padding:20px;background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.3);border-radius:12px;margin-bottom:32px;">
             <div style="font-size:13px;font-weight:800;color:#f59e0b;text-transform:uppercase;letter-spacing:0.05em;">Executive Summary &amp; Key Takeaways</div>
-            <p style="font-size:14px;color:#ffffff;font-weight:500;line-height:1.6;margin:10px 0 12px;">${post.summaryCapsule}</p>
+            <p style="font-size:14px;color:#ffffff;font-weight:500;line-height:1.6;margin:10px 0 12px;">${formatInline(post.summaryCapsule)}</p>
             <ul style="padding-left:18px;margin:0;font-size:13px;color:#d4d4d8;line-height:1.6;">
-              ${post.takeaways.map((t) => `<li style="margin-bottom:6px;">${t}</li>`).join("")}
+              ${post.takeaways.map((t) => `<li style="margin-bottom:6px;">${formatInline(t)}</li>`).join("")}
             </ul>
           </div>
 
