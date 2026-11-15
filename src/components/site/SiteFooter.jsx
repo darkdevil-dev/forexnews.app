@@ -334,6 +334,59 @@ function DirectoryBadgesList({ hidden }) {
           className="h-[36px] sm:h-[40px] w-auto rounded-lg"
         />
       </a>
+      <a
+        href="https://dododirectory.com"
+        target="_blank"
+        rel="dofollow"
+        className="inline-block shrink-0 transition-transform duration-200 hover:scale-[1.03]"
+      >
+        <img
+          src="https://dododirectory.com/badge-light.png"
+          alt="Featured on DodoDirectory"
+          width="200"
+          height="54"
+          loading="lazy"
+          className="h-[36px] sm:h-[40px] w-auto rounded-lg"
+        />
+      </a>
+      <a
+        href="https://saasbison.com"
+        target="_blank"
+        rel="dofollow"
+        className="inline-block shrink-0 transition-transform duration-200 hover:scale-[1.03]"
+      >
+        <img
+          src="https://saasbison.com/badge.png"
+          alt="Featured on SaaSBison"
+          width="200"
+          height="54"
+          loading="lazy"
+          className="h-[36px] sm:h-[40px] w-auto rounded-lg"
+        />
+      </a>
+      <a
+        href="https://sumodir.com"
+        target="_blank"
+        rel="dofollow"
+        className="inline-block shrink-0 transition-transform duration-200 hover:scale-[1.03]"
+      >
+        <img
+          src="https://sumodir.com/badge.png"
+          alt="Featured on SumoDir"
+          width="200"
+          height="54"
+          loading="lazy"
+          className="h-[36px] sm:h-[40px] w-auto rounded-lg"
+        />
+      </a>
+      <a
+        href="https://aitooltrek.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex shrink-0 items-center justify-center rounded-lg border border-white/15 bg-white/5 px-3.5 h-[36px] sm:h-[40px] font-mono text-[11px] font-semibold text-white/80 transition-all duration-200 hover:border-signal/50 hover:bg-white/10 hover:text-signal hover:scale-[1.03]"
+      >
+        AI Tool Trek
+      </a>
       <div className="inline-flex shrink-0 flex-col items-center leading-none transition-transform duration-200 hover:scale-[1.03]">
         <a
           href="https://tools.launchllama.co?utm_source=badge&utm_medium=referral"
