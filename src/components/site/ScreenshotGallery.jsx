@@ -94,8 +94,17 @@ export function ScreenshotGallery() {
         />
       </div>
 
-      {/* Bounded container with visible side margins / padding on both sides */}
-      <div className="mx-auto max-w-6xl px-4 sm:px-8 lg:px-12">
+      {/* Mobile touch carousel with snap alignment */}
+      <div className="md:hidden overflow-x-auto snap-x snap-mandatory scrollbar-none px-4 flex gap-4 py-2">
+        {screenshots.map((item) => (
+          <div key={item.src} className="snap-center shrink-0">
+            <ScreenshotCard item={item} />
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop bounded container with visible side margins / padding on both sides */}
+      <div className="hidden md:block mx-auto max-w-6xl px-4 sm:px-8 lg:px-12">
         <div
           className="marquee relative w-full overflow-hidden rounded-2xl [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]"
           aria-label="Forex News Android app screenshots carousel"

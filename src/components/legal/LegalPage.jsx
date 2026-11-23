@@ -67,10 +67,34 @@ export function LegalPage({
                         className="flex gap-2.5 text-[14px] leading-relaxed text-foreground/65"
                       >
                         <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-signal" />
-                        {item}
+                        <span>{item}</span>
                       </li>
                     ))}
                   </ul>
+                )}
+                {s.subsections && (
+                  <div className="mt-4 space-y-4">
+                    {s.subsections.map((sub) => (
+                      <div key={sub.h} className="rounded-xl border border-border/70 bg-card p-4 sm:p-5">
+                        <h3 className="text-[14.5px] font-bold text-foreground">{sub.h}</h3>
+                        {sub.p?.map((sp) => (
+                          <p key={sp.slice(0, 40)} className="mt-2 text-[13.5px] leading-relaxed text-foreground/75">
+                            {sp}
+                          </p>
+                        ))}
+                        {sub.list && (
+                          <ul className="mt-2.5 space-y-2">
+                            {sub.list.map((sItem) => (
+                              <li key={sItem.slice(0, 40)} className="flex gap-2.5 text-[13.5px] leading-relaxed text-foreground/70">
+                                <span className="mt-[8px] h-1 w-1 shrink-0 rounded-full bg-signal" />
+                                <span>{sItem}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    ))}
+                  </div>
                 )}
               </div>
             </section>

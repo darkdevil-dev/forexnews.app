@@ -284,6 +284,60 @@ for (const page of standardPages) {
     </div>
     `;
     html = html.replace(/<div id="root">[\s\S]*?<\/div>\s*<!--/i, `${contactRootHtml}\n\n    <!--`);
+  } else if (page.path === "privacy") {
+    const privacyRootHtml = `
+    <div id="root">
+      <header style="padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;align-items:center;">
+        <a href="/" style="font-weight:800;font-size:18px;text-decoration:none;color:#ffffff;"><span style="color:#f59e0b;">F</span>orex News</a>
+        <a href="/" style="color:#a1a1aa;text-decoration:none;font-size:13px;">Back to App</a>
+      </header>
+      <main style="max-width:760px;margin:0 auto;padding:48px 20px;">
+        <div style="display:inline-block;padding:4px 12px;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.25);border-radius:9999px;font-size:11px;font-weight:700;color:#f59e0b;text-transform:uppercase;margin-bottom:16px;">Legal Policy</div>
+        <h1 style="font-size:32px;font-weight:800;color:#ffffff;line-height:1.15;margin-bottom:12px;">Privacy Policy &amp; Advertising SDK Disclosures</h1>
+        <p style="font-size:13px;color:#a1a1aa;font-family:monospace;margin-bottom:24px;">Last updated: 23 November 2026 | Package: com.forexnews.app</p>
+        <p style="font-size:15px;color:#a1a1aa;line-height:1.6;margin-bottom:24px;">Forex News (&quot;we&quot;, &quot;us&quot;) publishes the Forex News Android application and the website at forexnews.app. This policy sets out our data collection practices, push notification infrastructure, and third-party advertising monetization SDK disclosures in full compliance with Google Play Developer policies.</p>
+
+        <section style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:24px;margin-bottom:24px;">
+          <h2 style="font-size:18px;font-weight:700;color:#ffffff;margin-bottom:12px;">1. Information We Handle</h2>
+          <p style="font-size:14px;color:#d4d4d8;line-height:1.7;margin-bottom:12px;">Forex News is engineered to function without account creation or login credentials. We never request your legal name, physical address, brokerage logins, or bank details. We handle limited technical data:</p>
+          <ul style="color:#d4d4d8;font-size:14px;line-height:1.7;padding-left:20px;">
+            <li><strong>App Diagnostics:</strong> Anonymous crash traces, device hardware model, Android OS build, and app version to fix crashes and maintain memory performance.</li>
+            <li><strong>Alert Settings:</strong> User-selected currency filters, impact levels, and lead-time alert preferences stored locally on your device.</li>
+            <li><strong>Notification Token:</strong> Anonymous Firebase Cloud Messaging (FCM) registration tokens used solely to dispatch real-time calendar alerts.</li>
+            <li><strong>Advertising Identifiers:</strong> The Google Play Advertising ID (AAID) and technical device signals handled by our monetization partners as detailed below.</li>
+          </ul>
+        </section>
+
+        <section style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:24px;margin-bottom:24px;">
+          <h2 style="font-size:18px;font-weight:700;color:#ffffff;margin-bottom:12px;">2. Third-Party Advertising &amp; Monetization Partners</h2>
+          <p style="font-size:14px;color:#d4d4d8;line-height:1.7;margin-bottom:14px;">To support our team and provide the Forex News economic calendar and 16 trading calculators as a free mobile service, we integrate authorized third-party advertising networks and mediation SDKs. These SDKs collect pseudonymous device parameters, the Google Play Advertising ID (AAID), coarse IP geolocation, and ad engagement metrics (impressions, clicks, and rewarded video completions):</p>
+          <ul style="color:#d4d4d8;font-size:14px;line-height:1.7;padding-left:20px;">
+            <li><strong>Google AdMob (Google LLC):</strong> Serves banner, native, and interstitial advertisements. Processes AAID, coarse IP location, device model, and fraud prevention telemetry. Privacy: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" style="color:#f59e0b;text-decoration:underline;">Google Advertising Privacy</a>.</li>
+            <li><strong>Unity Ads (Unity Technologies):</strong> Delivers mobile video and interactive advertisements, including optional user-initiated rewarded video sessions. Processes advertising identifiers, device model, language, and engagement metrics. Privacy: <a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" style="color:#f59e0b;text-decoration:underline;">Unity Privacy Policy</a>.</li>
+            <li><strong>Unity LevelPlay / ironSource (Unity Technologies):</strong> Acts as our ad mediation platform, routing ad requests among multiple ad networks to maximize fill rates and prevent network errors. Processes device signals, network status, and mediation analytics. Privacy: <a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" style="color:#f59e0b;text-decoration:underline;">LevelPlay Privacy</a>.</li>
+            <li><strong>Meta Audience Network (Meta Platforms, Inc.):</strong> Delivers targeted display and video ad inventory. Processes advertising identifiers, device specifications, and ad performance data. Privacy: <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer" style="color:#f59e0b;text-decoration:underline;">Meta Privacy Policy</a>.</li>
+          </ul>
+        </section>
+
+        <section style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:24px;margin-bottom:24px;">
+          <h2 style="font-size:18px;font-weight:700;color:#ffffff;margin-bottom:12px;">3. User Advertising Controls &amp; Android Opt-Out</h2>
+          <p style="font-size:14px;color:#d4d4d8;line-height:1.7;margin-bottom:12px;">You have full control over personalized advertising on your Android device. You can reset or delete your Advertising ID at any time:</p>
+          <ul style="color:#d4d4d8;font-size:14px;line-height:1.7;padding-left:20px;">
+            <li>Open your Android device <strong>Settings</strong> app.</li>
+            <li>Go to <strong>Privacy &gt; Ads</strong> (or <strong>Google &gt; Ads</strong> on earlier Android versions).</li>
+            <li>Select <strong>'Reset advertising ID'</strong> to disconnect past ad history, or select <strong>'Delete advertising ID'</strong> to prevent applications from reading your advertising identifier entirely.</li>
+            <li>When deleted, ad networks cannot track your device across apps, and you will only receive contextual, non-personalized advertisements.</li>
+          </ul>
+        </section>
+
+        <section style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:24px;">
+          <h2 style="font-size:18px;font-weight:700;color:#ffffff;margin-bottom:12px;">4. Data Deletion Requests</h2>
+          <p style="font-size:14px;color:#d4d4d8;line-height:1.7;margin-bottom:12px;">Under Google Play User Data policies, users can submit permanent data deletion requests via our online portal at <a href="/delete-account" style="color:#f59e0b;text-decoration:underline;">forexnews.app/delete-account</a> or by emailing our developer operations desk at <a href="mailto:hello@forexnews.app?subject=Privacy%20Inquiry%20-%20Forex%20News" style="color:#f59e0b;text-decoration:underline;">hello@forexnews.app</a>.</p>
+        </section>
+      </main>
+    </div>
+    `;
+    html = html.replace(/<div id="root">[\s\S]*?<\/div>\s*<!--/i, `${privacyRootHtml}\n\n    <!--`);
   }
 
   const outDir = path.join(distDir, page.path);

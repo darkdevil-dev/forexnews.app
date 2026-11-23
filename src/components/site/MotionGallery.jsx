@@ -33,7 +33,7 @@ function GalleryCard({ card }) {
   const { label, value, note, dot, icon: Icon, tone, bar, pro } = card;
 
   return (
-    <article className="w-[228px] shrink-0 rounded-2xl border border-border bg-card p-4 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
+    <article className="w-[210px] sm:w-[228px] shrink-0 rounded-2xl border border-border bg-card p-4 shadow-[0_1px_2px_rgba(0,0,0,0.04)]">
       <div className="flex items-center gap-2">
         {Icon ? (
           <span className={cn("grid h-6 w-6 shrink-0 place-items-center rounded-[7px]", tone)}>
@@ -52,7 +52,7 @@ function GalleryCard({ card }) {
         )}
       </div>
 
-      <p className="mt-3 text-[18px] font-bold leading-none tracking-[-0.03em] text-foreground">
+      <p className="mt-3 text-[17px] sm:text-[18px] font-bold leading-none tracking-[-0.03em] text-foreground">
         {value}
       </p>
       <p className="mt-1.5 text-[11.5px] leading-snug text-muted-foreground">{note}</p>
@@ -78,9 +78,22 @@ function Half({ hidden }) {
 
 export function MotionGallery() {
   return (
-    <section className="border-b border-border bg-background py-8">
+    <section className="border-b border-border bg-background py-6 sm:py-8">
+      {/* Mobile: smooth horizontal touch swipe with snap points and clean margins */}
       <div
-        className="marquee overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]"
+        className="flex md:hidden overflow-x-auto snap-x snap-mandatory scrollbar-none px-4 gap-3 py-1"
+        aria-label="What the app shows at a glance"
+      >
+        {cards.map((card) => (
+          <div key={card.label} className="snap-start shrink-0">
+            <GalleryCard card={card} />
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop: continuous smooth marquee */}
+      <div
+        className="hidden md:block marquee overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]"
         aria-label="What the app shows at a glance"
       >
         <div className="marquee-track flex w-max">
