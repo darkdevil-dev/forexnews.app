@@ -46,9 +46,6 @@ const columns = [
     links: [
       { label: "Contact Us", to: "/contact" },
       { label: "Google Play", href: PLAY_STORE_URL, external: true },
-      { label: "Sitemap", href: "/sitemap.xml", external: true },
-      { label: "llms.txt", href: "/llms.txt", external: true },
-      { label: "llm.txt", href: "/llm.txt", external: true },
     ],
   },
 ];

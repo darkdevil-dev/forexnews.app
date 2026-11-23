@@ -225,6 +225,35 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" />
 
+    <!-- Preload Critical App Screenshots for Instant Rendering -->
+    <link rel="preload" as="image" href="/screenshots/1.webp" type="image/webp" />
+    <link rel="preload" as="image" href="/screenshots/2.webp" type="image/webp" />
+
+    <!-- Theme-Aware Initial Styles (Prevents White-on-White Flash in Light Mode) -->
+    <style>
+      :root {
+        --fallback-bg: #ffffff;
+        --fallback-text: #09090b;
+        --fallback-muted: #71717a;
+        --fallback-border: #e4e4e7;
+        --fallback-card: #f4f4f5;
+      }
+      .dark {
+        --fallback-bg: #000000;
+        --fallback-text: #fafafa;
+        --fallback-muted: #a1a1aa;
+        --fallback-border: rgba(255, 255, 255, 0.1);
+        --fallback-card: rgba(255, 255, 255, 0.03);
+      }
+      html, body {
+        background-color: var(--fallback-bg);
+        color: var(--fallback-text);
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      }
+    </style>
+
     <!-- Inline Theme Script (prevents flash of wrong theme before hydration) -->
     <script>
       try {
@@ -233,87 +262,90 @@
         if (d) {
           document.documentElement.classList.add('dark');
           document.documentElement.style.colorScheme = 'dark';
+        } else {
+          document.documentElement.classList.remove('dark');
+          document.documentElement.style.colorScheme = 'light';
         }
       } catch (e) {}
     </script>
   </head>
   <body>
     <div id="root">
-      <header style="padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;align-items:center;">
-        <a href="/" style="font-weight:800;font-size:18px;text-decoration:none;color:#ffffff;"><span style="color:#f59e0b;">F</span>orex News</a>
+      <header style="padding:16px 20px;border-bottom:1px solid var(--fallback-border);display:flex;justify-content:space-between;align-items:center;">
+        <a href="/" style="font-weight:800;font-size:18px;text-decoration:none;color:var(--fallback-text);"><span style="color:#f59e0b;">F</span>orex News</a>
         <nav style="display:flex;gap:16px;">
-          <a href="/#features" style="color:#a1a1aa;text-decoration:none;font-size:13px;">Features</a>
-          <a href="/#alerts" style="color:#a1a1aa;text-decoration:none;font-size:13px;">Alerts</a>
-          <a href="/#calculators" style="color:#a1a1aa;text-decoration:none;font-size:13px;">Calculators</a>
-          <a href="/blog" style="color:#a1a1aa;text-decoration:none;font-size:13px;">Guides</a>
-          <a href="/#faq" style="color:#a1a1aa;text-decoration:none;font-size:13px;">FAQ</a>
+          <a href="/#features" style="color:var(--fallback-muted);text-decoration:none;font-size:13px;">Features</a>
+          <a href="/#alerts" style="color:var(--fallback-muted);text-decoration:none;font-size:13px;">Alerts</a>
+          <a href="/#calculators" style="color:var(--fallback-muted);text-decoration:none;font-size:13px;">Calculators</a>
+          <a href="/blog" style="color:var(--fallback-muted);text-decoration:none;font-size:13px;">Guides</a>
+          <a href="/#faq" style="color:var(--fallback-muted);text-decoration:none;font-size:13px;">FAQ</a>
         </nav>
       </header>
       <main style="max-width:960px;margin:0 auto;padding:48px 20px;">
         <section style="text-align:center;">
-          <h1 style="font-size:38px;line-height:1.1;font-weight:800;letter-spacing:-0.03em;color:#ffffff;margin-bottom:20px;">
+          <h1 style="font-size:38px;line-height:1.1;font-weight:800;letter-spacing:-0.03em;color:var(--fallback-text);margin-bottom:20px;">
             Know what's coming <span style="color:#f59e0b;">before</span> the candle moves.
           </h1>
-          <p style="font-size:16px;line-height:1.6;color:#a1a1aa;max-width:680px;margin:0 auto 28px;">
+          <p style="font-size:16px;line-height:1.6;color:var(--fallback-muted);max-width:680px;margin:0 auto 28px;">
             Forex News is an Android app providing a live global economic calendar, real-time push event alerts minutes before high-impact releases, and 16 essential trading calculators for currency traders. Zero noise, zero spam, and no registration required.
           </p>
           <p>
-            <a href="https://play.google.com/store/apps/details?id=com.forexnews" style="display:inline-block;padding:12px 24px;background:#f59e0b;color:#000000;font-weight:700;border-radius:8px;text-decoration:none;">Download for Android on Google Play</a>
+            <a href="https://play.google.com/store/apps/details?id=com.forexnews.app" style="display:inline-block;padding:12px 24px;background:#f59e0b;color:#000000;font-weight:700;border-radius:8px;text-decoration:none;">Download for Android on Google Play</a>
           </p>
         </section>
 
         <section style="margin-top:56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;">
-          <article style="padding:20px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;">
-            <h2 style="font-size:18px;font-weight:700;color:#ffffff;margin-bottom:8px;">Live Economic Calendar</h2>
-            <p style="font-size:13.5px;line-height:1.5;color:#a1a1aa;">Covers every major central bank release and macroeconomic report across USD, EUR, GBP, JPY, AUD, CAD, CHF, and NZD. View previous, forecast, and actual figures instantly.</p>
+          <article style="padding:20px;background:var(--fallback-card);border:1px solid var(--fallback-border);border-radius:12px;">
+            <h2 style="font-size:18px;font-weight:700;color:var(--fallback-text);margin-bottom:8px;">Live Economic Calendar</h2>
+            <p style="font-size:13.5px;line-height:1.5;color:var(--fallback-muted);">Covers every major central bank release and macroeconomic report across USD, EUR, GBP, JPY, AUD, CAD, CHF, and NZD. View previous, forecast, and actual figures instantly.</p>
           </article>
-          <article style="padding:20px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;">
-            <h2 style="font-size:18px;font-weight:700;color:#ffffff;margin-bottom:8px;">Pre-Release Event Alerts</h2>
-            <p style="font-size:13.5px;line-height:1.5;color:#a1a1aa;">Custom notifications sent minutes before CPI inflation prints, NFP employment numbers, interest rate decisions, and FOMC meetings so you never get surprised by volatility.</p>
+          <article style="padding:20px;background:var(--fallback-card);border:1px solid var(--fallback-border);border-radius:12px;">
+            <h2 style="font-size:18px;font-weight:700;color:var(--fallback-text);margin-bottom:8px;">Pre-Release Event Alerts</h2>
+            <p style="font-size:13.5px;line-height:1.5;color:var(--fallback-muted);">Custom notifications sent minutes before CPI inflation prints, NFP employment numbers, interest rate decisions, and FOMC meetings so you never get surprised by volatility.</p>
           </article>
-          <article style="padding:20px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;">
-            <h2 style="font-size:18px;font-weight:700;color:#ffffff;margin-bottom:8px;">16 Trading Calculators</h2>
-            <p style="font-size:13.5px;line-height:1.5;color:#a1a1aa;">Accurate position sizing, pip value calculator, margin requirements, risk-reward ratios, leverage analysis, and pivot point tools built specifically for disciplined risk management.</p>
+          <article style="padding:20px;background:var(--fallback-card);border:1px solid var(--fallback-border);border-radius:12px;">
+            <h2 style="font-size:18px;font-weight:700;color:var(--fallback-text);margin-bottom:8px;">16 Trading Calculators</h2>
+            <p style="font-size:13.5px;line-height:1.5;color:var(--fallback-muted);">Accurate position sizing, pip value calculator, margin requirements, risk-reward ratios, leverage analysis, and pivot point tools built specifically for disciplined risk management.</p>
           </article>
         </section>
 
         <section style="margin-top:56px;">
           <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
-            <h2 style="font-size:22px;font-weight:700;color:#ffffff;margin:0;">Forex Trading Blog &amp; Market Research</h2>
+            <h2 style="font-size:22px;font-weight:700;color:var(--fallback-text);margin:0;">Forex Trading Blog &amp; Market Research</h2>
             <a href="/blog" style="color:#f59e0b;font-size:13px;font-weight:600;text-decoration:none;">View all guides &rarr;</a>
           </div>
           <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;">
-            <article style="padding:16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:10px;">
-              <h3 style="font-size:15px;font-weight:700;color:#ffffff;margin-bottom:6px;"><a href="/blog/how-to-trade-forex-news-economic-calendar" style="color:#ffffff;text-decoration:none;">How to Trade Forex News</a></h3>
-              <p style="font-size:13px;line-height:1.5;color:#a1a1aa;">Master NFP, CPI, and interest rate releases with disciplined secondary entry strategies and spread risk management.</p>
+            <article style="padding:16px;background:var(--fallback-card);border:1px solid var(--fallback-border);border-radius:10px;">
+              <h3 style="font-size:15px;font-weight:700;color:var(--fallback-text);margin-bottom:6px;"><a href="/blog/how-to-trade-forex-news-economic-calendar" style="color:var(--fallback-text);text-decoration:none;">How to Trade Forex News</a></h3>
+              <p style="font-size:13px;line-height:1.5;color:var(--fallback-muted);">Master NFP, CPI, and interest rate releases with disciplined secondary entry strategies and spread risk management.</p>
             </article>
-            <article style="padding:16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:10px;">
-              <h3 style="font-size:15px;font-weight:700;color:#ffffff;margin-bottom:6px;"><a href="/blog/forex-position-size-calculator-risk-management-guide" style="color:#ffffff;text-decoration:none;">Position Sizing &amp; Risk Guide</a></h3>
-              <p style="font-size:13px;line-height:1.5;color:#a1a1aa;">The complete mathematical guide to calculating exact lot sizes, pip values, and leverage to prevent account ruin.</p>
+            <article style="padding:16px;background:var(--fallback-card);border:1px solid var(--fallback-border);border-radius:10px;">
+              <h3 style="font-size:15px;font-weight:700;color:var(--fallback-text);margin-bottom:6px;"><a href="/blog/forex-position-size-calculator-risk-management-guide" style="color:var(--fallback-text);text-decoration:none;">Position Sizing &amp; Risk Guide</a></h3>
+              <p style="font-size:13px;line-height:1.5;color:var(--fallback-muted);">The complete mathematical guide to calculating exact lot sizes, pip values, and leverage to prevent account ruin.</p>
             </article>
-            <article style="padding:16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:10px;">
-              <h3 style="font-size:15px;font-weight:700;color:#ffffff;margin-bottom:6px;"><a href="/blog/best-forex-news-alerts-app-android" style="color:#ffffff;text-decoration:none;">Best Forex News Alerts App</a></h3>
-              <p style="font-size:13px;line-height:1.5;color:#a1a1aa;">Compare economic calendar apps for Android with sub-second push notifications, zero ad noise, and 16 calculators.</p>
+            <article style="padding:16px;background:var(--fallback-card);border:1px solid var(--fallback-border);border-radius:10px;">
+              <h3 style="font-size:15px;font-weight:700;color:var(--fallback-text);margin-bottom:6px;"><a href="/blog/best-forex-news-alerts-app-android" style="color:var(--fallback-text);text-decoration:none;">Best Forex News Alerts App</a></h3>
+              <p style="font-size:13px;line-height:1.5;color:var(--fallback-muted);">Compare economic calendar apps for Android with sub-second push notifications, zero ad noise, and 16 calculators.</p>
             </article>
-            <article style="padding:16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:10px;">
-              <h3 style="font-size:15px;font-weight:700;color:#ffffff;margin-bottom:6px;"><a href="/blog/major-forex-currency-pairs-economic-indicators" style="color:#ffffff;text-decoration:none;">Major Pairs &amp; Economic Indicators</a></h3>
-              <p style="font-size:13px;line-height:1.5;color:#a1a1aa;">What moves EUR/USD, USD/JPY, GBP/USD, and commodity currencies. Central bank policies and macroeconomic catalysts.</p>
+            <article style="padding:16px;background:var(--fallback-card);border:1px solid var(--fallback-border);border-radius:10px;">
+              <h3 style="font-size:15px;font-weight:700;color:var(--fallback-text);margin-bottom:6px;"><a href="/blog/major-forex-currency-pairs-economic-indicators" style="color:var(--fallback-text);text-decoration:none;">Major Pairs &amp; Economic Indicators</a></h3>
+              <p style="font-size:13px;line-height:1.5;color:var(--fallback-muted);">What moves EUR/USD, USD/JPY, GBP/USD, and commodity currencies. Central bank policies and macroeconomic catalysts.</p>
             </article>
-            <article style="padding:16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:10px;">
-              <h3 style="font-size:15px;font-weight:700;color:#ffffff;margin-bottom:6px;"><a href="/blog/forex-factory-vs-forex-news-app-comparison-2027" style="color:#ffffff;text-decoration:none;">Forex Factory vs Forex News App</a></h3>
-              <p style="font-size:13px;line-height:1.5;color:#a1a1aa;">Comparing classic desktop web calendars with modern Android push daemons and offline risk calculators.</p>
+            <article style="padding:16px;background:var(--fallback-card);border:1px solid var(--fallback-border);border-radius:10px;">
+              <h3 style="font-size:15px;font-weight:700;color:var(--fallback-text);margin-bottom:6px;"><a href="/blog/forex-factory-vs-forex-news-app-comparison-2027" style="color:var(--fallback-text);text-decoration:none;">Forex Factory vs Forex News App</a></h3>
+              <p style="font-size:13px;line-height:1.5;color:var(--fallback-muted);">Comparing classic desktop web calendars with modern Android push daemons and offline risk calculators.</p>
             </article>
-            <article style="padding:16px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:10px;">
-              <h3 style="font-size:15px;font-weight:700;color:#ffffff;margin-bottom:6px;"><a href="/blog/investing-com-myfxbook-vs-forex-news-app-2027" style="color:#ffffff;text-decoration:none;">Investing.com &amp; Myfxbook Teardown</a></h3>
-              <p style="font-size:13px;line-height:1.5;color:#a1a1aa;">How heavy ad networks, memory leaks, and background battery drain affect mobile trading execution.</p>
+            <article style="padding:16px;background:var(--fallback-card);border:1px solid var(--fallback-border);border-radius:10px;">
+              <h3 style="font-size:15px;font-weight:700;color:var(--fallback-text);margin-bottom:6px;"><a href="/blog/investing-com-myfxbook-vs-forex-news-app-2027" style="color:var(--fallback-text);text-decoration:none;">Investing.com &amp; Myfxbook Teardown</a></h3>
+              <p style="font-size:13px;line-height:1.5;color:var(--fallback-muted);">How heavy ad networks, memory leaks, and background battery drain affect mobile trading execution.</p>
             </article>
           </div>
-          <nav style="margin-top:24px;display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:#a1a1aa;">
-            <a href="/privacy" style="color:#a1a1aa;">Privacy Policy</a>
-            <a href="/terms" style="color:#a1a1aa;">Terms of Service</a>
-            <a href="/refund-policy" style="color:#a1a1aa;">Refund Policy</a>
-            <a href="/contact" style="color:#a1a1aa;">Contact Us</a>
-            <a href="/delete-account" style="color:#a1a1aa;">Delete Account</a>
+          <nav style="margin-top:24px;display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--fallback-muted);">
+            <a href="/privacy" style="color:var(--fallback-muted);">Privacy Policy</a>
+            <a href="/terms" style="color:var(--fallback-muted);">Terms of Service</a>
+            <a href="/refund-policy" style="color:var(--fallback-muted);">Refund Policy</a>
+            <a href="/contact" style="color:var(--fallback-muted);">Contact Us</a>
+            <a href="/delete-account" style="color:var(--fallback-muted);">Delete Account</a>
           </nav>
         </section>
       </main>

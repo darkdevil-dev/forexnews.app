@@ -39,7 +39,9 @@ const screenshots = [
   },
 ];
 
-function ScreenshotCard({ item }) {
+function ScreenshotCard({ item, index = 0 }) {
+  const webpSrc = item.src.replace(/\.png$/, ".webp");
+
   return (
     <div className="group/item flex flex-col items-center shrink-0 w-[130px] sm:w-[150px] md:w-[170px] select-none">
       {/* Phone Mockup Frame - compact height */}
@@ -48,14 +50,20 @@ function ScreenshotCard({ item }) {
         <div className="absolute top-2.5 left-1/2 -translate-x-1/2 w-10 sm:w-12 h-2 sm:h-2.5 bg-zinc-950 rounded-full z-20 pointer-events-none" />
 
         {/* Screen Content */}
-        <div className="relative w-full h-full overflow-hidden rounded-[14px] sm:rounded-[20px] bg-black">
-          <img
-            src={item.src}
-            alt={item.alt}
-            loading="lazy"
-            decoding="async"
-            className="w-full h-full object-cover object-top"
-          />
+        <div className="relative w-full h-full overflow-hidden rounded-[14px] sm:rounded-[20px] bg-zinc-950">
+          <picture>
+            <source srcSet={webpSrc} type="image/webp" />
+            <img
+              src={item.src}
+              alt={item.alt}
+              loading="eager"
+              decoding="async"
+              fetchPriority={index < 3 ? "high" : "auto"}
+              width={270}
+              height={600}
+              className="w-full h-full object-cover object-top"
+            />
+          </picture>
         </div>
       </div>
 
@@ -76,7 +84,7 @@ function Half({ hidden }) {
   return (
     <div className="flex gap-4 sm:gap-5 pr-4 sm:pr-5" aria-hidden={hidden || undefined}>
       {screenshots.map((item, index) => (
-        <ScreenshotCard key={`${item.title}-${index}`} item={item} />
+        <ScreenshotCard key={`${item.title}-${index}`} item={item} index={index} />
       ))}
     </div>
   );
@@ -96,9 +104,9 @@ export function ScreenshotGallery() {
 
       {/* Mobile touch carousel with snap alignment */}
       <div className="md:hidden overflow-x-auto snap-x snap-mandatory scrollbar-none px-4 flex gap-4 py-2">
-        {screenshots.map((item) => (
+        {screenshots.map((item, index) => (
           <div key={item.src} className="snap-center shrink-0">
-            <ScreenshotCard item={item} />
+            <ScreenshotCard item={item} index={index} />
           </div>
         ))}
       </div>
