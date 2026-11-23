@@ -13,15 +13,6 @@ const columns = [
     ],
   },
   {
-    title: "Calculators",
-    links: [
-      { label: "Position size", href: "/#calculators" },
-      { label: "Pip value", href: "/#calculators" },
-      { label: "Margin & leverage", href: "/#calculators" },
-      { label: "All 16 tools", href: "/#calculators" },
-    ],
-  },
-  {
     title: "Guides",
     links: [
       { label: "Trading Forex News", to: "/blog/how-to-trade-forex-news-economic-calendar" },
@@ -526,7 +517,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-8 border-b border-white/10 py-12 sm:grid-cols-3 md:grid-cols-5">
+        <div className="grid grid-cols-2 gap-8 border-b border-white/10 py-12 sm:grid-cols-2 md:grid-cols-4">
           {columns.map((col) => (
             <div key={col.title}>
               <p className="text-[12.5px] font-semibold text-white">{col.title}</p>
