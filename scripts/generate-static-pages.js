@@ -41,6 +41,21 @@ const standardPages = [
     title: "Refund Policy & Billing Guarantee",
     description: "Official Refund Policy for the Forex News Android app and forexnews.app website.",
   },
+  {
+    path: "contact",
+    title: "Contact Support & Inquiries",
+    description: "Contact the Forex News team for technical support, economic calendar questions, calculator feature requests, and inquiries.",
+  },
+  {
+    path: "delete-account",
+    title: "Delete Account & Data Request",
+    description: "Submit an account and data deletion request for the Forex News Android app under Google Play User Data privacy policies.",
+  },
+  {
+    path: "delete-data",
+    title: "Delete Account & Data Request",
+    description: "Submit an account and data deletion request for the Forex News Android app under Google Play User Data privacy policies.",
+  },
 ];
 
 function applyCommonMeta(html, title, description, url, options = {}) {
@@ -198,6 +213,78 @@ for (const page of standardPages) {
 
   const breadcrumbScript = `\n    <!-- Breadcrumbs Structured Data -->\n    <script type="application/ld+json">\n    ${breadcrumbJson}\n    </script>\n  </head>`;
   html = html.replace("</head>", breadcrumbScript);
+
+  if (page.path === "delete-account" || page.path === "delete-data") {
+    const deleteRootHtml = `
+    <div id="root">
+      <header style="padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;align-items:center;">
+        <a href="/" style="font-weight:800;font-size:18px;text-decoration:none;color:#ffffff;"><span style="color:#f59e0b;">F</span>orex News</a>
+        <a href="/" style="color:#a1a1aa;text-decoration:none;font-size:13px;">Back to App</a>
+      </header>
+      <main style="max-width:760px;margin:0 auto;padding:48px 20px;">
+        <div style="display:inline-block;padding:4px 12px;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.25);border-radius:9999px;font-size:11px;font-weight:700;color:#f59e0b;text-transform:uppercase;margin-bottom:16px;">Google Play Data Deletion</div>
+        <h1 style="font-size:32px;font-weight:800;color:#ffffff;line-height:1.15;margin-bottom:16px;">Request Account &amp; User Data Deletion</h1>
+        <p style="font-size:15px;color:#a1a1aa;line-height:1.6;margin-bottom:20px;">Under Google Play User Data policies, users of the <strong>Forex News</strong> Android application (package: <code>com.forexnews.app</code>) have the right to request the complete and permanent deletion of their account records, notification subscriptions, and all associated personal data.</p>
+        <p style="font-size:14px;color:#a1a1aa;line-height:1.6;margin-bottom:24px;">Forex News operates on an offline-first architectural model. We do not require account creation, password management, or brokerage logins to access real-time economic calendar events or any of the 16 professional trading calculators. However, if you have enabled push notifications or communicated with our support desk, certain identifier data may be held on our servers.</p>
+        
+        <section style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:24px;margin-bottom:24px;">
+          <h2 style="font-size:18px;font-weight:700;color:#ffffff;margin-bottom:12px;">Data Eligible for Permanent Deletion</h2>
+          <ul style="color:#d4d4d8;font-size:14px;line-height:1.7;padding-left:20px;">
+            <li><strong>Push Notification Tokens:</strong> Anonymous Firebase Cloud Messaging (FCM) registration tokens used to deliver pre-release economic event alerts to your mobile device.</li>
+            <li><strong>Alert Preferences:</strong> Saved currency filters, event impact thresholds, and custom notification lead times (5, 15, 30, or 60 minutes).</li>
+            <li><strong>Support Correspondence:</strong> Historical customer support inquiries, feedback submissions, bug reports, and email threads sent to our developer team.</li>
+            <li><strong>Diagnostic Telemetry:</strong> Anonymous crash analytics and device identifiers associated with your specific application installation.</li>
+          </ul>
+        </section>
+
+        <section style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:24px;margin-bottom:24px;">
+          <h2 style="font-size:18px;font-weight:700;color:#ffffff;margin-bottom:12px;">Data Retention &amp; Legal Compliance Timeline</h2>
+          <p style="font-size:14px;color:#d4d4d8;line-height:1.7;margin-bottom:12px;">All verified data deletion requests are reviewed and permanently removed from our active databases and notification dispatch queues within 30 calendar days. Forex News does not store, retain, or process trading account credentials, order histories, bank details, or credit card information. Payments on Google Play are processed entirely by Google LLC.</p>
+          <p style="font-size:14px;color:#d4d4d8;line-height:1.7;">Alternatively, simply uninstalling the application immediately invalidates your device token on the Firebase Cloud Messaging network.</p>
+        </section>
+
+        <section style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:24px;">
+          <h2 style="font-size:18px;font-weight:700;color:#ffffff;margin-bottom:12px;">How to Submit a Deletion Request</h2>
+          <p style="font-size:14px;color:#a1a1aa;line-height:1.6;margin-bottom:16px;">To submit an account or data deletion request, use the interactive web form on this page or email our privacy operations desk directly at <a href="mailto:hello@forexnews.app?subject=Account%20Deletion%20Request%20-%20Forex%20News" style="color:#f59e0b;text-decoration:underline;">hello@forexnews.app</a> with the subject line 'Account Deletion Request'.</p>
+        </section>
+      </main>
+    </div>
+    `;
+    html = html.replace(/<div id="root">[\s\S]*?<\/div>\s*<!--/i, `${deleteRootHtml}\n\n    <!--`);
+  } else if (page.path === "contact") {
+    const contactRootHtml = `
+    <div id="root">
+      <header style="padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;align-items:center;">
+        <a href="/" style="font-weight:800;font-size:18px;text-decoration:none;color:#ffffff;"><span style="color:#f59e0b;">F</span>orex News</a>
+        <a href="/" style="color:#a1a1aa;text-decoration:none;font-size:13px;">Back to App</a>
+      </header>
+      <main style="max-width:760px;margin:0 auto;padding:48px 20px;">
+        <div style="display:inline-block;padding:4px 12px;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.25);border-radius:9999px;font-size:11px;font-weight:700;color:#f59e0b;text-transform:uppercase;margin-bottom:16px;">Support &amp; Inquiries</div>
+        <h1 style="font-size:32px;font-weight:800;color:#ffffff;line-height:1.15;margin-bottom:16px;">Contact Forex News Support</h1>
+        <p style="font-size:15px;color:#a1a1aa;line-height:1.6;margin-bottom:20px;">Welcome to the official support and communication hub for Forex News (<code>com.forexnews.app</code>). Whether you need assistance configuring high-impact economic calendar alerts, have questions about our 16 trading calculators, or want to suggest new currency pairs, our developer and quantitative team is ready to help.</p>
+
+        <section style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:24px;margin-bottom:24px;">
+          <h2 style="font-size:18px;font-weight:700;color:#ffffff;margin-bottom:12px;">Inquiries We Assist With</h2>
+          <ul style="color:#d4d4d8;font-size:14px;line-height:1.7;padding-left:20px;">
+            <li><strong>Economic Calendar Data &amp; Timing:</strong> Questions regarding Tier-1 macroeconomic releases, consensus forecasts, historical revisions, and time zone synchronizations across G10 and emerging currency markets.</li>
+            <li><strong>Push Notification Troubleshooting:</strong> Assistance configuring high-priority background push delivery on modern Android devices, battery management whitelist settings, and notification sound customization.</li>
+            <li><strong>Trading Calculator Guidance:</strong> Mathematical explanations and feature proposals for our 16 offline calculators, including Position Size, Pip Value, Margin, Risk-Reward, and Pivot Points.</li>
+            <li><strong>Bug Reports &amp; App Diagnostics:</strong> Prompt reporting of crashes, interface rendering glitches, or latency delays on specific Android device models and OS versions.</li>
+            <li><strong>Privacy, Account Deletion &amp; Data Rights:</strong> Official requests regarding data privacy, notification token purging, and Google Play compliance inquiries.</li>
+            <li><strong>Partnerships &amp; Developer Relations:</strong> Inquiries from financial directories, trading educational platforms, and market data contributors.</li>
+          </ul>
+        </section>
+
+        <section style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:24px;">
+          <h2 style="font-size:18px;font-weight:700;color:#ffffff;margin-bottom:12px;">Support Hours &amp; Response Service Level Agreement (SLA)</h2>
+          <p style="font-size:14px;color:#d4d4d8;line-height:1.7;margin-bottom:12px;">Our support desk monitors incoming tickets Monday through Friday during active London and New York market trading sessions. General questions and technical support tickets are answered within 24 to 48 business hours. Critical data discrepancies receive expedited priority review.</p>
+          <p style="font-size:14px;color:#d4d4d8;line-height:1.7;">Submit your inquiry via the secure contact form on this page, or write directly to <a href="mailto:hello@forexnews.app" style="color:#f59e0b;text-decoration:underline;">hello@forexnews.app</a>. Download the latest version of the app on <a href="https://play.google.com/store/apps/details?id=com.forexnews.app" target="_blank" rel="noopener noreferrer" style="color:#f59e0b;text-decoration:underline;">Google Play</a>.</p>
+        </section>
+      </main>
+    </div>
+    `;
+    html = html.replace(/<div id="root">[\s\S]*?<\/div>\s*<!--/i, `${contactRootHtml}\n\n    <!--`);
+  }
 
   const outDir = path.join(distDir, page.path);
   fs.mkdirSync(outDir, { recursive: true });

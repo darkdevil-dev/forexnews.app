@@ -24,3 +24,5 @@ Forex News (https://forexnews.app/) is an Android application engineered for cur
 - [Terms of Service](https://forexnews.app/terms): Terms and conditions for the mobile application and web presence.
 - [Risk Disclaimer](https://forexnews.app/risk-disclaimer): Mandatory foreign exchange and CFD leverage risk warnings.
 - [Refund Policy](https://forexnews.app/refund-policy): Official refund terms for Google Play billing transactions.
+- [Contact Support](https://forexnews.app/contact): Support inquiry form, technical assistance, and direct team communication.
+- [Delete Account & Data Request](https://forexnews.app/delete-account): Official Google Play user data and account deletion request portal.

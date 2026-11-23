@@ -7,6 +7,8 @@ import { PrivacyPage } from "./pages/PrivacyPage.jsx";
 import { TermsPage } from "./pages/TermsPage.jsx";
 import { RiskPage } from "./pages/RiskPage.jsx";
 import { RefundPage } from "./pages/RefundPage.jsx";
+import { ContactPage } from "./pages/ContactPage.jsx";
+import { DeleteAccountPage } from "./pages/DeleteAccountPage.jsx";
 import { NotFoundPage } from "./pages/NotFoundPage.jsx";
 
 export default function App() {
@@ -21,6 +23,10 @@ export default function App() {
         <Route path="/risk-disclaimer" element={<RiskPage />} />
         <Route path="/refund-policy" element={<RefundPage />} />
         <Route path="/refund" element={<RefundPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/delete-account" element={<DeleteAccountPage />} />
+        <Route path="/delete-data" element={<DeleteAccountPage />} />
+        <Route path="/account-deletion" element={<DeleteAccountPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Analytics />

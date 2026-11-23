@@ -38,11 +38,13 @@ const columns = [
       { label: "Terms of Service", to: "/terms" },
       { label: "Refund Policy", to: "/refund-policy" },
       { label: "Risk Disclaimer", to: "/risk-disclaimer" },
+      { label: "Delete Account", to: "/delete-account" },
     ],
   },
   {
     title: "Resources",
     links: [
+      { label: "Contact Us", to: "/contact" },
       { label: "Google Play", href: PLAY_STORE_URL, external: true },
       { label: "Sitemap", href: "/sitemap.xml", external: true },
       { label: "llms.txt", href: "/llms.txt", external: true },
