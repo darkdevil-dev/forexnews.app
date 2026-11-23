@@ -12,11 +12,6 @@ export function Hero() {
   return (
     <section className="border-b border-border">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 pb-12 pt-10 text-center sm:pb-24 sm:pt-24 lg:pt-28">
-        <div className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full border border-signal/30 bg-signal/10 text-signal text-[11.5px] font-semibold tracking-wide uppercase">
-          <span className="h-1.5 w-1.5 rounded-full bg-signal animate-pulse" />
-          Forex News App &bull; Live Economic Calendar 2027
-        </div>
-
         <h1 className="mx-auto max-w-[19ch] text-[clamp(2.1rem,6.2vw,4.4rem)] font-bold leading-[1.06] tracking-[-0.04em] text-foreground">
           Know what's coming <Mark>before</Mark> the candle moves.
         </h1>
