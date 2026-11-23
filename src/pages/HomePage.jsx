@@ -15,9 +15,9 @@ import { usePageMeta } from "@/hooks/use-page-meta";
 
 export function HomePage() {
   usePageMeta({
-    title: "Forex News | Economic Calendar, Alerts & Trading Calculators",
+    title: "Forex News App | Economic Calendar, Alerts & 16 Calculators",
     description:
-      "Forex News is an Android app with the full global economic calendar, custom alerts before every release, and all the trading calculators you need. Download it on Google Play.",
+      "Forex News is an Android app with a live economic calendar, fast pre-release event alerts, and 16 trading calculators. Free, no ads, no signup.",
     canonicalPath: "/",
   });
 
