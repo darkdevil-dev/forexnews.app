@@ -34,6 +34,31 @@ export function Hero() {
           </a>
         </div>
 
+        {/* Product Hunt Review Badge */}
+        <div className="mt-6 sm:mt-7 flex justify-center">
+          <a
+            href="https://www.producthunt.com/products/forex-news-economics-calendar/reviews/new?utm_source=badge-product_review&utm_medium=badge&utm_source=badge-forex-news-economics-calendar"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block transition-transform duration-200 hover:scale-[1.03]"
+          >
+            <img
+              src="https://api.producthunt.com/widgets/embed-image/v1/product_review.svg?product_id=1291478&theme=light"
+              alt="ForexNews.app - Live Economic Calendar, Forex News, and real-time alerts. | Product Hunt"
+              width={250}
+              height={54}
+              className="h-[48px] sm:h-[54px] w-auto dark:hidden"
+            />
+            <img
+              src="https://api.producthunt.com/widgets/embed-image/v1/product_review.svg?product_id=1291478&theme=dark"
+              alt="ForexNews.app - Live Economic Calendar, Forex News, and real-time alerts. | Product Hunt"
+              width={250}
+              height={54}
+              className="h-[48px] sm:h-[54px] w-auto hidden dark:block"
+            />
+          </a>
+        </div>
+
         <div className="mx-auto mt-8 sm:mt-14 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-2 sm:gap-2.5 max-w-md sm:max-w-none">
           {pillars.map((p) => (
             <div
